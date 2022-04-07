@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */; };
+		5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */; };
+		5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */; };
+		5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */; };
 		880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7D927F46A46005C3E20 /* AppDelegate.swift */; };
 		880BB7DC27F46A46005C3E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7DB27F46A46005C3E20 /* SceneDelegate.swift */; };
 		880BB7DE27F46A46005C3E20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7DD27F46A46005C3E20 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePatientViewController.swift; sourceTree = "<group>"; };
+		5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssistantViewController.swift; sourceTree = "<group>"; };
+		5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpViewController.swift; sourceTree = "<group>"; };
+		5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignUpViewController.swift; sourceTree = "<group>"; };
 		880BB7D627F46A46005C3E20 /* Medico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medico.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880BB7D927F46A46005C3E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		880BB7DB27F46A46005C3E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +74,10 @@
 				880BB7E727F46A48005C3E20 /* LaunchScreen.storyboard */,
 				880BB7EA27F46A48005C3E20 /* Info.plist */,
 				880BB7E227F46A46005C3E20 /* Medico.xcdatamodeld */,
+				5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */,
+				5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */,
+				5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */,
+				5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */,
 			);
 			path = Medico;
 			sourceTree = "<group>";
@@ -141,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */,
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
+				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
+				5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */,
 				880BB7DE27F46A46005C3E20 /* ViewController.swift in Sources */,
+				5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */,
 				880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */,
 				880BB7DC27F46A46005C3E20 /* SceneDelegate.swift in Sources */,
 			);
