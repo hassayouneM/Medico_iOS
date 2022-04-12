@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */; };
+		5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */; };
+		5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18CE27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift */; };
+		5B4E18D127FF8FE400495BDA /* HealthPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18D027FF8FE400495BDA /* HealthPatientViewController.swift */; };
+		5B4E18D327FF900600495BDA /* ProfilePatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18D227FF900600495BDA /* ProfilePatientViewController.swift */; };
+		5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */; };
+		5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */; };
+		5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */; };
+		5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */; };
+		880388DE2805D7CB00328D77 /* PatientChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388DD2805D7CB00328D77 /* PatientChatViewController.swift */; };
+		880388E02805D7DD00328D77 /* assistantChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388DF2805D7DD00328D77 /* assistantChatViewController.swift */; };
+		880388E22805D82200328D77 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E12805D82200328D77 /* ForgetPassViewController.swift */; };
+		880388E42805D84D00328D77 /* ForgetPassVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */; };
+		880388E62805E49D00328D77 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E52805E49D00328D77 /* EditProfileViewController.swift */; };
+		880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7D927F46A46005C3E20 /* AppDelegate.swift */; };
+		880BB7DC27F46A46005C3E20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7DB27F46A46005C3E20 /* SceneDelegate.swift */; };
+		880BB7DE27F46A46005C3E20 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7DD27F46A46005C3E20 /* SignInViewController.swift */; };
+		880BB7E127F46A46005C3E20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880BB7DF27F46A46005C3E20 /* Main.storyboard */; };
+		880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7E227F46A46005C3E20 /* Medico.xcdatamodeld */; };
+		880BB7E627F46A48005C3E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880BB7E527F46A48005C3E20 /* Assets.xcassets */; };
+		880BB7E927F46A48005C3E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880BB7E727F46A48005C3E20 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
+		5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPatientAssistantViewController.swift; sourceTree = "<group>"; };
+		5B4E18CE27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPatientAssistantViewController.swift; sourceTree = "<group>"; };
+		5B4E18D027FF8FE400495BDA /* HealthPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPatientViewController.swift; sourceTree = "<group>"; };
+		5B4E18D227FF900600495BDA /* ProfilePatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePatientViewController.swift; sourceTree = "<group>"; };
+		5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePatientViewController.swift; sourceTree = "<group>"; };
+		5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssistantViewController.swift; sourceTree = "<group>"; };
+		5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpViewController.swift; sourceTree = "<group>"; };
+		5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignUpViewController.swift; sourceTree = "<group>"; };
+		880388DD2805D7CB00328D77 /* PatientChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientChatViewController.swift; sourceTree = "<group>"; };
+		880388DF2805D7DD00328D77 /* assistantChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantChatViewController.swift; sourceTree = "<group>"; };
+		880388E12805D82200328D77 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
+		880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassVerificationViewController.swift; sourceTree = "<group>"; };
+		880388E52805E49D00328D77 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		880BB7D627F46A46005C3E20 /* Medico.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Medico.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		880BB7D927F46A46005C3E20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		880BB7DB27F46A46005C3E20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		880BB7DD27F46A46005C3E20 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		880BB7E027F46A46005C3E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		880BB7E327F46A46005C3E20 /* Medico.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Medico.xcdatamodel; sourceTree = "<group>"; };
+		880BB7E527F46A48005C3E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		880BB7E827F46A48005C3E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		880BB7EA27F46A48005C3E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		880BB7D327F46A46005C3E20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B4E18D527FFB17300495BDA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				880BB7DB27F46A46005C3E20 /* SceneDelegate.swift */,
+				880BB7D927F46A46005C3E20 /* AppDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5B4E18D627FFB1A400495BDA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5B4E18D727FFB1C100495BDA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B4E18D827FFB1D000495BDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				880BB7DD27F46A46005C3E20 /* SignInViewController.swift */,
+				5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */,
+				5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */,
+				5B6E8FAD27FF3FC200A5C20B /* HomePatientViewController.swift */,
+				5B6E8FAF27FF3FD000A5C20B /* HomeAssistantViewController.swift */,
+				5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */,
+				5B4E18CE27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift */,
+				5B4E18D027FF8FE400495BDA /* HealthPatientViewController.swift */,
+				5B4E18D227FF900600495BDA /* ProfilePatientViewController.swift */,
+				5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */,
+				880388DD2805D7CB00328D77 /* PatientChatViewController.swift */,
+				880388DF2805D7DD00328D77 /* assistantChatViewController.swift */,
+				880388E12805D82200328D77 /* ForgetPassViewController.swift */,
+				880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */,
+				880388E52805E49D00328D77 /* EditProfileViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		880BB7CD27F46A46005C3E20 = {
+			isa = PBXGroup;
+			children = (
+				880BB7D827F46A46005C3E20 /* Medico */,
+				880BB7D727F46A46005C3E20 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		880BB7D727F46A46005C3E20 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				880BB7D627F46A46005C3E20 /* Medico.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		880BB7D827F46A46005C3E20 /* Medico */ = {
+			isa = PBXGroup;
+			children = (
+				5B4E18D827FFB1D000495BDA /* View */,
+				5B4E18D727FFB1C100495BDA /* Models */,
+				5B4E18D627FFB1A400495BDA /* ViewModels */,
+				5B4E18D527FFB17300495BDA /* Common */,
+				880BB7DF27F46A46005C3E20 /* Main.storyboard */,
+				880BB7E527F46A48005C3E20 /* Assets.xcassets */,
+				880BB7E727F46A48005C3E20 /* LaunchScreen.storyboard */,
+				880BB7EA27F46A48005C3E20 /* Info.plist */,
+				880BB7E227F46A46005C3E20 /* Medico.xcdatamodeld */,
+			);
+			path = Medico;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		880BB7D527F46A46005C3E20 /* Medico */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 880BB7ED27F46A48005C3E20 /* Build configuration list for PBXNativeTarget "Medico" */;
+			buildPhases = (
+				880BB7D227F46A46005C3E20 /* Sources */,
+				880BB7D327F46A46005C3E20 /* Frameworks */,
+				880BB7D427F46A46005C3E20 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Medico;
+			productName = Medico;
+			productReference = 880BB7D627F46A46005C3E20 /* Medico.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		880BB7CE27F46A46005C3E20 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					880BB7D527F46A46005C3E20 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = 880BB7D127F46A46005C3E20 /* Build configuration list for PBXProject "Medico" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 880BB7CD27F46A46005C3E20;
+			productRefGroup = 880BB7D727F46A46005C3E20 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				880BB7D527F46A46005C3E20 /* Medico */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		880BB7D427F46A46005C3E20 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				880BB7E927F46A48005C3E20 /* LaunchScreen.storyboard in Resources */,
+				880BB7E627F46A48005C3E20 /* Assets.xcassets in Resources */,
+				880BB7E127F46A46005C3E20 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		880BB7D227F46A46005C3E20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */,
+				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
+				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
+				5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */,
+				5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */,
+				5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */,
+				880388E22805D82200328D77 /* ForgetPassViewController.swift in Sources */,
+				880BB7DE27F46A46005C3E20 /* SignInViewController.swift in Sources */,
+				880388E62805E49D00328D77 /* EditProfileViewController.swift in Sources */,
+				5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */,
+				880388E42805D84D00328D77 /* ForgetPassVerificationViewController.swift in Sources */,
+				880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */,
+				5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */,
+				880388E02805D7DD00328D77 /* assistantChatViewController.swift in Sources */,
+				880388DE2805D7CB00328D77 /* PatientChatViewController.swift in Sources */,
+				5B4E18D127FF8FE400495BDA /* HealthPatientViewController.swift in Sources */,
+				5B4E18D327FF900600495BDA /* ProfilePatientViewController.swift in Sources */,
+				880BB7DC27F46A46005C3E20 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		880BB7DF27F46A46005C3E20 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880BB7E027F46A46005C3E20 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		880BB7E727F46A48005C3E20 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				880BB7E827F46A48005C3E20 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		880BB7EB27F46A48005C3E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		880BB7EC27F46A48005C3E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		880BB7EE27F46A48005C3E20 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Medico/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Medico;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.tn.Medico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		880BB7EF27F46A48005C3E20 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Medico/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Medico;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = esprit.tn.Medico;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		880BB7D127F46A46005C3E20 /* Build configuration list for PBXProject "Medico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BB7EB27F46A48005C3E20 /* Debug */,
+				880BB7EC27F46A48005C3E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		880BB7ED27F46A48005C3E20 /* Build configuration list for PBXNativeTarget "Medico" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				880BB7EE27F46A48005C3E20 /* Debug */,
+				880BB7EF27F46A48005C3E20 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		880BB7E227F46A46005C3E20 /* Medico.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				880BB7E327F46A46005C3E20 /* Medico.xcdatamodel */,
+			);
+			currentVersion = 880BB7E327F46A46005C3E20 /* Medico.xcdatamodel */;
+			path = Medico.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 880BB7CE27F46A46005C3E20 /* Project object */;
+}
