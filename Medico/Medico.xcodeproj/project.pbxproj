@@ -80,7 +80,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		5B4E18D827FFB1D000495BDA /* Controllers */ = {
+		5B4E18D827FFB1D000495BDA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				880BB7DD27F46A46005C3E20 /* ViewController.swift */,
@@ -94,7 +94,7 @@
 				5B4E18D227FF900600495BDA /* ProfilePatientViewController.swift */,
 				5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */,
 			);
-			path = Controllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		5B4E18D927FFB1E100495BDA /* APIServices */ = {
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				5B4E18D927FFB1E100495BDA /* APIServices */,
-				5B4E18D827FFB1D000495BDA /* Controllers */,
+				5B4E18D827FFB1D000495BDA /* ViewController */,
 				5B4E18D727FFB1C100495BDA /* Models */,
 				5B4E18D627FFB1A400495BDA /* ViewModels */,
 				5B4E18D527FFB17300495BDA /* Common */,
