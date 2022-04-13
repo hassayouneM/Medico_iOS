@@ -13,9 +13,8 @@ and install the dependencies
 If you are looking for something specific, you can jump right into the relevant section from here.
 
 1. [Getting Started](#getting-started)
-1. [Architecture](#architecture)
-1. [Assets](#assets)
-1. [Coding Style](#coding-style)
+2. [Architecture](#architecture)
+3. [Interfaces](#intefaces) 
 
 
 ## Getting Started
@@ -72,5 +71,14 @@ If you prefer to write your views in code, chances are you've heard of either Ap
 
 
 [mvvm]: https://www.objc.io/issues/13-architecture/mvvm/
+
+## Intefaces
+
+<img width="2048" alt="Capture d’écran 2022-04-12 à 01 53 01" src="https://user-images.githubusercontent.com/73349963/163087323-2e4e78b5-befa-4efe-9ad6-b607967ea275.png">
+
+
+
+
+
 
     
