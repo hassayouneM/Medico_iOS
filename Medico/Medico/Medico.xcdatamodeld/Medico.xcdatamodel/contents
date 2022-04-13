@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Medicine" representedClassName="Medicine" syncable="YES" codeGenerationType="class">
+    <entity name="Medicines" representedClassName="Medicines" syncable="YES" codeGenerationType="class">
         <attribute name="before_after" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -9,7 +9,7 @@
         <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="until" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+    <entity name="Users" representedClassName="Users" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="assistant_email" optional="YES" attributeType="String"/>
@@ -23,7 +23,7 @@
         <attribute name="photo" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Medicine" positionX="-54" positionY="63" width="128" height="14"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="14"/>
+        <element name="Medicines" positionX="-54" positionY="63" width="128" height="134"/>
+        <element name="Users" positionX="-63" positionY="-18" width="128" height="194"/>
     </elements>
 </model>

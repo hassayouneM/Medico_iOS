@@ -12,11 +12,11 @@ enum BorA : String {
     case A = "After Meal"
 }
 struct Medecine {
-    var before_after : BorA
-    var category : String?
-    var name : String?
-    var notif_time : Date?
-    var photo : String?
-    var quantity : Int?
-    var until : Date?
+    var Before_after : BorA
+    var Category : String?
+    var Name : String?
+    var Notif_time : Date?
+    var Photo : String?
+    var Quantity : Int?
+    var Until : Date?
 }

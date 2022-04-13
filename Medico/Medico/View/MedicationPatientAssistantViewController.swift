@@ -52,7 +52,11 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
         
         return TVCell
     }
-    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .insert{
+            performSegue(withIdentifier: "EditMedSegue", sender: indexPath)
+        }
+    }
 
     
 

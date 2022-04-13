@@ -18,17 +18,17 @@ enum Blood_types : String {
     case ON = "O-"
 }
 struct User {
-    var name: String?
-    var age: Int?
-    var adresse: String?
-    var assistant_email: String?
-    var blood_type: Blood_types
-    var email : String?
-    var emergency_num : String?
-    var is_assistant : Bool?
-    var password : String?
-    var phone : Int?
-    var photo : String?
+    var Name: String?
+    var Age: Int?
+    var Adresse: String?
+    var Assistant_email: String?
+    var Blood_type: Blood_types
+    var Email : String?
+    var Emergency_num : String?
+    var Is_assistant : Bool?
+    var Password : String?
+    var Phone : Int?
+    var Photo : String?
     
 }
 
