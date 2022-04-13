@@ -19,6 +19,7 @@ class PatientSignUpViewController: UIViewController {
     @IBOutlet weak var EmmergencyNumberField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var bloodPlicker: UIPickerView!
+    @IBOutlet weak var AddressField: UITextField!
     //action
     
     

@@ -12,7 +12,6 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
 
     //var
     
-    //var names = ["patient 1", "patient 2", "patient 3"]
     let names = ["patient 1", "patient 2", "patient 3"]
     
     var filteredNames = [String]()
@@ -89,6 +88,17 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
 
+//    //Alert
+//    func DeleteAlert(title : String, message : String){
+//        
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//
+//        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default, handler: nil))
+//                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+//
+//             
+//        self.present(alert, animated: true, completion: nil)
+//    }
 }
 
 
