@@ -13,9 +13,7 @@ and install the dependencies
 If you are looking for something specific, you can jump right into the relevant section from here.
 
 1. [Getting Started](#getting-started)
-1. [Common Libraries](#common-libraries)
 1. [Architecture](#architecture)
-1. [Stores](#stores)
 1. [Assets](#assets)
 1. [Coding Style](#coding-style)
 
@@ -54,12 +52,6 @@ To keep all those hundreds of source files from ending up in the same directory,
     ├─ Views
     ├─ ViewModels
 
-    
-## Common Libraries
-
-Generally speaking, make it a conscious decision to add an external dependency to your project. Sure, this one neat library solves your problem now, but maybe later gets stuck in maintenance limbo, with the next OS version that breaks everything being just around the corner. Another scenario is that a feature only achievable with external libraries suddenly becomes part of the official APIs. In a well-designed codebase, switching out the implementation is a small effort that pays off quickly. Always consider solving the problem using Apple's extensive (and mostly excellent) frameworks first!
-
-Therefore this section has been deliberately kept rather short. The libraries featured here tend to reduce boilerplate code (e.g. Auto Layout) or solve complex problems that require extensive testing, such as date calculations. As you become more proficient with iOS, be sure to dive into the source here and there, and acquaint yourself with their underlying Apple frameworks. You'll find that those alone can do a lot of the heavy lifting.
 
 ### AFNetworking/Alamofire
 
