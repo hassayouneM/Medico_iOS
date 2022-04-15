@@ -16,22 +16,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Splash Screen" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-57-oeO">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash Screen" translatesAutoresizingMaskIntoConstraints="NO" id="3IH-57-oeO">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-QM-OUH">
-                                <rect key="frame" x="62.5" y="400" width="289" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-QM-OUH">
+                                <rect key="frame" x="62" y="401" width="290" height="76"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="3IH-57-oeO" secondAttribute="bottom" id="2TU-GI-vKd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QPM-QM-OUH" secondAttribute="bottom" constant="385" id="KMp-Yr-c1g"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U98-yt-GI9"/>
+                            <constraint firstItem="QPM-QM-OUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="b5S-Qf-ZM3"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOR-T7-hEt"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gqp-Sh-cne"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="p9x-l7-BmY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPM-QM-OUH" secondAttribute="trailing" constant="62" id="x3y-wC-AqV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="372"/>
+            <point key="canvasLocation" x="50.724637681159422" y="371.65178571428572"/>
         </scene>
     </scenes>
     <resources>

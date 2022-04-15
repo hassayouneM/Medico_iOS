@@ -28,6 +28,7 @@
 		880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 880BB7E227F46A46005C3E20 /* Medico.xcdatamodeld */; };
 		880BB7E627F46A48005C3E20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880BB7E527F46A48005C3E20 /* Assets.xcassets */; };
 		880BB7E927F46A48005C3E20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880BB7E727F46A48005C3E20 /* LaunchScreen.storyboard */; };
+		880BBC212809D58B00E2A84F /* EditMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880BBC202809D58B00E2A84F /* EditMedicationViewController.swift */; };
 		88352ECF2806184C000E29BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88352ECE2806184C000E29BA /* User.swift */; };
 		88352ED128061861000E29BA /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88352ED028061861000E29BA /* Medicine.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +57,7 @@
 		880BB7E527F46A48005C3E20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880BB7E827F46A48005C3E20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		880BB7EA27F46A48005C3E20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		880BBC202809D58B00E2A84F /* EditMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMedicationViewController.swift; sourceTree = "<group>"; };
 		88352ECE2806184C000E29BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88352ED028061861000E29BA /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				880388E12805D82200328D77 /* ForgetPassViewController.swift */,
 				880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */,
 				880388E52805E49D00328D77 /* EditProfileViewController.swift */,
+				880BBC202809D58B00E2A84F /* EditMedicationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
 				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
 				5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */,
+				880BBC212809D58B00E2A84F /* EditMedicationViewController.swift in Sources */,
 				5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */,
 				5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */,
 				880388E22805D82200328D77 /* ForgetPassViewController.swift in Sources */,
