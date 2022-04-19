@@ -20,17 +20,17 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-QM-OUH">
-                                <rect key="frame" x="62" y="401" width="290" height="76"/>
+                                <rect key="frame" x="62" y="410" width="290" height="76"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="3IH-57-oeO" secondAttribute="bottom" id="2TU-GI-vKd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QPM-QM-OUH" secondAttribute="bottom" constant="385" id="KMp-Yr-c1g"/>
                             <constraint firstItem="3IH-57-oeO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U98-yt-GI9"/>
                             <constraint firstItem="QPM-QM-OUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="b5S-Qf-ZM3"/>
                             <constraint firstItem="3IH-57-oeO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOR-T7-hEt"/>
+                            <constraint firstItem="QPM-QM-OUH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dLa-Uz-Qf2"/>
                             <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gqp-Sh-cne"/>
                             <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="p9x-l7-BmY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPM-QM-OUH" secondAttribute="trailing" constant="62" id="x3y-wC-AqV"/>
