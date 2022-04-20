@@ -12,6 +12,8 @@ class PatientSignUpViewController: UIViewController {
     //var
     let bloodTypes = ["A+", "A-", "B+", "B-","O+","O-", "AB+","AB-"]
     
+    var user: User?
+    
     //outlets
     
     
@@ -25,8 +27,54 @@ class PatientSignUpViewController: UIViewController {
     
     
     @IBAction func signupBtn(_ sender: Any) {
-        performSegue(withIdentifier: "signup_patient_segue", sender: true)
+        
+        //EMPTY FIELD VERFICATION
+        if (AssistantEmailField.text!.isEmpty) {
+            self.present(Alert.makeAlert(titre: "Warning", message: "Please type your assistant email"), animated: true)
+            return
+        }
+        
+        if (EmmergencyNumberField.text!.isEmpty) {
+            self.present(Alert.makeAlert(titre: "Warning", message: "Please type your emmergency number"), animated: true)
+            return
+        }
+        
+        
+        if (AddressField.text!.isEmpty) {
+            self.present(Alert.makeAlert(titre: "Warning", message: "Please type your address"), animated: true)
+            return
+        }
+        
+        //add photo
+        self.user?.birthdate = birthDatePicker.date
+        self.user?.address = AddressField.text
+        self.user?.assistant_email = AssistantEmailField.text
+        self.user?.blood_type = bloodTypes[Int(bloodPlicker.selectedRow(inComponent: 0))]
+        self.user?.emergency_num = Int(EmmergencyNumberField.text!)
+        
+        UserViewModel().signup(user: self.user!,  completed: { (success) in
+            
+            if success {
+                //print(self.user?._id)
+                let alert = UIAlertController(title: "Success", message: "Your account has been created.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+                    self.performSegue(withIdentifier: "signup_patient_segue", sender: true)
+                }
+                alert.addAction(action)
+                self.present(alert, animated: true)
+                //UserDefaults.standard.set(self.user?.email, forKey: "email")
+            } else {
+                self.present(Alert.makeAlert(titre: "Error", message: "Account may already exist."), animated: true)
+            }
+            
+        })
+        
     }
+        
+        
+        
+        
+
     
     
     
@@ -39,6 +87,10 @@ class PatientSignUpViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        let blood_type_selected = bloodTypes[row] as String
+//    }
 
 }
 extension PatientSignUpViewController : UIPickerViewDataSource{

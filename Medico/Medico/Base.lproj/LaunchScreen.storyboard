@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,20 +20,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="QPM-QM-OUH">
-                                <rect key="frame" x="62" y="410" width="290" height="76"/>
+                                <rect key="frame" x="36" y="392" width="350" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="1RS-9g-rPe"/>
+                                    <constraint firstAttribute="width" constant="350" id="eRo-O6-uGH"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="3IH-57-oeO" secondAttribute="bottom" id="2TU-GI-vKd"/>
-                            <constraint firstItem="3IH-57-oeO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="U98-yt-GI9"/>
-                            <constraint firstItem="QPM-QM-OUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="b5S-Qf-ZM3"/>
-                            <constraint firstItem="3IH-57-oeO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bOR-T7-hEt"/>
-                            <constraint firstItem="QPM-QM-OUH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dLa-Uz-Qf2"/>
-                            <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gqp-Sh-cne"/>
-                            <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="p9x-l7-BmY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPM-QM-OUH" secondAttribute="trailing" constant="62" id="x3y-wC-AqV"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0Oh-4S-OAK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QPM-QM-OUH" secondAttribute="trailing" constant="28" id="EuU-ar-MMv"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="I8U-g5-4S5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QPM-QM-OUH" secondAttribute="bottom" constant="355" id="S8P-Wf-arw"/>
+                            <constraint firstItem="QPM-QM-OUH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="bfH-ZJ-HfG"/>
+                            <constraint firstItem="QPM-QM-OUH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="348" id="cfJ-mN-WBU"/>
+                            <constraint firstAttribute="bottom" secondItem="3IH-57-oeO" secondAttribute="bottom" id="dYB-hd-y3n"/>
+                            <constraint firstItem="3IH-57-oeO" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qjU-aK-zXT"/>
                         </constraints>
                     </view>
                 </viewController>
