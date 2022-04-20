@@ -25,7 +25,7 @@ public class UserViewModel : ObservableObject{
                     let jsonData = JSON(response.data!)
                     let user = self.makeItem(jsonItem: jsonData["user"])
                     UserDefaults.standard.setValue(jsonData["token"].stringValue, forKey: "tokenConnexion")
-                    UserDefaults.standard.setValue(user._id, forKey: "idUtilisateur")
+                    UserDefaults.standard.setValue(user._id, forKey: "id")
                     print(user)
                     
                     completed(true, user)
@@ -49,7 +49,7 @@ public class UserViewModel : ObservableObject{
                     "address":user.address!,
                     "assistant_email":user.assistant_email!,
                     "blood_type": user.blood_type!,
-                    "emergency_num " : user.emergency_num!,
+                    "emergency_num" : user.emergency_num!,
                     "is_assistant" : user.is_assistant!,
                     "phone" : user.phone!
                    ] ,encoding: JSONEncoding.default)
@@ -87,4 +87,27 @@ public class UserViewModel : ObservableObject{
           
         )
     }
+    func getUserById(id: String, completed: @escaping(Bool, User?) -> Void) {
+        print("Looking for user --------------------")
+        AF.request(HOST_URL + "users/findById",
+                   method: .post,
+                   parameters: ["id": UserDefaults.standard.string(forKey: "id")],
+                   encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .response { response in
+                switch response.result {
+                case .success:
+                    let jsonData = JSON(response.data!)
+                    let user = self.makeItem(jsonItem: jsonData["user"])
+                    print("Found user --------------------")
+                    print(user)
+                    print("-------------------------------")
+                   
+                    completed(true, user)
+                case let .failure(error):
+                    debugPrint(error)
+                    completed(false, nil)
+                }
+            }    }
 }

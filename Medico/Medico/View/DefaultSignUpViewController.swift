@@ -78,6 +78,7 @@ class DefaultSignUpViewController: UIViewController {
         user.email = emailField.text
         user.password  = PassField.text
         user.phone = Int(PhoneNumberField.text!)
+        print(type(of: user.phone))
         user.is_assistant = isAssistantSwitch.isOn
         user.birthdate = Date.now
         user.photo = ""

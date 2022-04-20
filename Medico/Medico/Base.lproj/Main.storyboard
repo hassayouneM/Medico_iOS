@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="-22" width="414" height="291"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9v-Ug-Vzq">
-                                <rect key="frame" x="229" y="814" width="128" height="34.5"/>
+                                <rect key="frame" x="229" y="812" width="128" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register Now">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
@@ -218,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZp-Df-vji">
-                                <rect key="frame" x="151" y="685" width="40" height="40"/>
+                                <rect key="frame" x="151" y="683" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="3SY-mw-cbc"/>
                                     <constraint firstAttribute="height" constant="40" id="v4h-aJ-Zvy"/>
@@ -227,7 +227,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="Google logo" title=""/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-oo-QKj">
-                                <rect key="frame" x="216" y="682" width="40" height="40"/>
+                                <rect key="frame" x="216" y="680" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WSE-Ua-27y"/>
                                     <constraint firstAttribute="width" constant="40" id="ysB-OW-WfH"/>
@@ -236,12 +236,12 @@
                                 <buttonConfiguration key="configuration" style="plain" image="Vector-1" title=""/>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-MO-ngG">
-                                <rect key="frame" x="30" y="432.5" width="354" height="36"/>
+                                <rect key="frame" x="30" y="432.5" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-XW-EIi">
-                                <rect key="frame" x="215" y="475" width="160" height="32"/>
+                                <rect key="frame" x="215" y="473" width="160" height="32"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forget password ?">
                                     <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="15"/>
@@ -254,10 +254,10 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="CVB-QN-zjN">
                                 <rect key="frame" x="30" y="364" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRv-lM-VXE">
-                                <rect key="frame" x="30" y="547" width="354" height="38"/>
+                                <rect key="frame" x="30" y="545" width="354" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign In" cornerStyle="small">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
@@ -268,13 +268,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 1" translatesAutoresizingMaskIntoConstraints="NO" id="xNi-Rb-YVn">
-                                <rect key="frame" x="46" y="640" width="148" height="1"/>
+                                <rect key="frame" x="46" y="638" width="148" height="1"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Vector 1" translatesAutoresizingMaskIntoConstraints="NO" id="29C-nC-iKT">
-                                <rect key="frame" x="220" y="640" width="148" height="1"/>
+                                <rect key="frame" x="220" y="638" width="148" height="1"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY6-7D-UcJ">
-                                <rect key="frame" x="199" y="629" width="16" height="20.5"/>
+                                <rect key="frame" x="199" y="627" width="16" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                                 <rect key="frame" x="50" y="72" width="314" height="76"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFw-jY-roU">
-                                <rect key="frame" x="54" y="821" width="178" height="20.5"/>
+                                <rect key="frame" x="54" y="819" width="178" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -367,29 +367,29 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ON0-Fb-fg2">
                                 <rect key="frame" x="30" y="359" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Confirm password" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="xYc-v6-maW">
-                                <rect key="frame" x="30" y="481" width="354" height="36"/>
+                                <rect key="frame" x="30" y="479" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Phone number" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cmf-ZT-Ysa">
-                                <rect key="frame" x="30" y="542" width="354" height="36"/>
+                                <rect key="frame" x="30" y="538" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="OtT-Rt-KAG">
-                                <rect key="frame" x="30" y="420" width="354" height="36"/>
+                                <rect key="frame" x="30" y="420" width="354" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7O5-HC-Xpd">
-                                <rect key="frame" x="305" y="603" width="51" height="31"/>
+                                <rect key="frame" x="305" y="599" width="51" height="31"/>
                                 <color key="onTintColor" systemColor="tintColor"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assistant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ae-nv-oeS">
-                                <rect key="frame" x="50" y="603.5" width="80.5" height="24"/>
+                                <rect key="frame" x="50" y="599.5" width="80.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -401,7 +401,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kA2-cb-r7d">
-                                <rect key="frame" x="30" y="678.5" width="354" height="38"/>
+                                <rect key="frame" x="30" y="674.5" width="354" height="38"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Next" cornerStyle="small">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
@@ -412,13 +412,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAc-qw-4OQ">
-                                <rect key="frame" x="40" y="779.5" width="193.5" height="20.5"/>
+                                <rect key="frame" x="40" y="775.5" width="193.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zID-a5-Dnj">
-                                <rect key="frame" x="241" y="774.5" width="67" height="34.5"/>
+                                <rect key="frame" x="241" y="770.5" width="67" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login">
                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="17"/>
@@ -1814,12 +1814,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Emergency number" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-ZK-ZqD">
                                 <rect key="frame" x="30" y="591" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Assistant email" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="x3X-Sq-42W">
                                 <rect key="frame" x="30" y="647" width="354" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="tel"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEj-nG-no1">
                                 <rect key="frame" x="30" y="718" width="354" height="38"/>
@@ -1934,10 +1934,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oSv-Er-rWg"/>
-        <segue reference="Dtz-Ar-b3c"/>
-        <segue reference="vZR-zf-9zw"/>
-        <segue reference="y63-N0-c6e"/>
+        <segue reference="HUi-ba-q7G"/>
+        <segue reference="nri-AB-q5X"/>
+        <segue reference="rAn-e4-dIj"/>
+        <segue reference="xJh-xl-jgt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.15780699249999999" green="0.1279308498" blue="0.95955604309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

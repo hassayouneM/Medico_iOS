@@ -12,6 +12,8 @@ class ProfilePatientViewController: UIViewController {
     
     //var
     
+    var user : User?
+    
     //outlets
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -31,10 +33,26 @@ class ProfilePatientViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initializePage()
         // Do any additional setup after loading the view.
     }
     
 
+    func initializePage() {
+        
+        UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
+            [self] success, result in self.user = result
+            
+            nameLabel.text = result?.name
+            assistantEmailLabel.text = result?.assistant_email
+            adresseLabel.text = result?.address
+            EmergencyPhoneLabel.text = String(Int(result?.emergency_num ?? 0))
+            bloodTypelabel.text = result?.blood_type
+            
+            
+        }
+        
+    }
    
 
 }

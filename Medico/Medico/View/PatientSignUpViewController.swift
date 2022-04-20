@@ -51,6 +51,7 @@ class PatientSignUpViewController: UIViewController {
         self.user?.assistant_email = AssistantEmailField.text
         self.user?.blood_type = bloodTypes[Int(bloodPlicker.selectedRow(inComponent: 0))]
         self.user?.emergency_num = Int(EmmergencyNumberField.text!)
+        print(type(of: self.user?.emergency_num))
         
         UserViewModel().signup(user: self.user!,  completed: { (success) in
             
