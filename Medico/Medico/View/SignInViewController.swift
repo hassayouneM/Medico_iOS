@@ -13,6 +13,8 @@ class SignInViewController: UIViewController {
     //var
     let userViewModel = UserViewModel()
 
+    var email: String?
+
     let spinner = SpinnerViewController()
     
     
@@ -99,7 +101,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        emailField.text = email
+
     }
 
 

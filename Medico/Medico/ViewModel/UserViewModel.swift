@@ -129,4 +129,66 @@ public class UserViewModel : ObservableObject{
                 }
             }
     }
+    func forgetPassword(email: String, codeDeReinit: String, completed: @escaping (Bool) -> Void) {
+        AF.request(HOST_URL + "users/forgetPassword",
+                   method: .post,
+                   parameters: ["email": email, "codeDeReinit": codeDeReinit])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    completed(true)
+                case let .failure(error):
+                    print(error)
+                    completed(false)
+                }
+            }
+    }
+    func changepassword(email: String, newPassword: String, completed: @escaping (Bool) -> Void) {
+        AF.request(HOST_URL + "users/resetPass",
+                   method: .put,
+                   parameters: ["email": email,"newPassword": newPassword])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    completed(true)
+                case let .failure(error):
+                    print(error)
+                    completed(false)
+                }
+            }
+    }
+    func loginWithSocialApp(email: String, nom: String, completed: @escaping (Bool, User?) -> Void ) {
+        AF.request(HOST_URL + "users/loginWithSocial",
+                   method: .post,
+                   parameters: [
+                    "email": email,
+                    "name": nom
+                    
+                   ],
+                   encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .response { response in
+                switch response.result {
+                case .success:
+                    let jsonData = JSON(response.data!)
+                    let user = self.makeItem(jsonItem: jsonData["user"])
+                    
+                    print("this is the new token value : " + jsonData["token"].stringValue)
+                    UserDefaults.standard.setValue(jsonData["token"].stringValue, forKey: "tokenConnexion")
+                    UserDefaults.standard.setValue(user._id, forKey: "idUser")
+                   
+                    completed(true, user)
+                case let .failure(error):
+                    debugPrint(error)
+                    completed(false, nil)
+                }
+            }
+    }
 }

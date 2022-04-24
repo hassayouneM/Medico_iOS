@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
+		43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB24228152E540029D35B /* NewPasswordViewController.swift */; };
 		5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */; };
 		5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */; };
 		5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18CE27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
+		43EAB24228152E540029D35B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		592B6B9C1542B3D983EB2C91 /* Pods_Medico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
 		5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPatientAssistantViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */,
 				880388E52805E49D00328D77 /* EditProfileViewController.swift */,
 				880BBC202809D58B00E2A84F /* EditMedicationViewController.swift */,
+				43EAB24228152E540029D35B /* NewPasswordViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				880BB7DE27F46A46005C3E20 /* SignInViewController.swift in Sources */,
 				880388E62805E49D00328D77 /* EditProfileViewController.swift in Sources */,
 				5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */,
+				43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */,
 				880388E42805D84D00328D77 /* ForgetPassVerificationViewController.swift in Sources */,
 				880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */,
 				5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */,
