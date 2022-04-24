@@ -59,7 +59,7 @@ class PatientSignUpViewController: UIViewController {
                 //print(self.user?._id)
                 let alert = UIAlertController(title: "Success", message: "Your account has been created.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-                    self.performSegue(withIdentifier: "signup_patient_segue", sender: true)
+                    self.performSegue(withIdentifier: "Segue_patient_signup", sender: true)
                 }
                 alert.addAction(action)
                 self.present(alert, animated: true)

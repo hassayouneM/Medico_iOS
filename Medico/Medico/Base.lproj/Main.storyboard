@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -477,13 +477,13 @@
                         <outlet property="emailField" destination="ON0-Fb-fg2" id="UVX-Sc-Tt8"/>
                         <outlet property="isAssistantSwitch" destination="7O5-HC-Xpd" id="h6i-20-dh0"/>
                         <outlet property="nameField" destination="OUr-by-iA1" id="P5s-zi-qGw"/>
-                        <segue destination="usC-BM-s5p" kind="presentation" identifier="signup_assistant_segue" modalPresentationStyle="fullScreen" id="nri-AB-q5X"/>
                         <segue destination="354-xP-rIZ" kind="presentation" identifier="nextSignup_segue" modalPresentationStyle="fullScreen" id="lMr-47-GmT"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Segue_Signup_Signin" modalPresentationStyle="fullScreen" id="ElT-Dm-ofU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jz-cj-9ob" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8115942028987" y="87.723214285714278"/>
+            <point key="canvasLocation" x="1871" y="0.0"/>
         </scene>
         <!--Home Assistant View Controller-->
         <scene sceneID="IyV-0F-eaZ">
@@ -514,7 +514,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wXP-m5-7zS">
-                                                    <rect key="frame" x="20" y="10" width="80" height="80"/>
+                                                    <rect key="frame" x="20" y="11" width="80" height="78"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="76.5" id="4A6-da-Aix"/>
                                                         <constraint firstAttribute="width" constant="80" id="BPH-iJ-xvt"/>
@@ -563,7 +563,7 @@
                                         <rightBarButtonItems>
                                             <barButtonItem image="rectangle.portrait.and.arrow.right.fill" catalog="system" id="0G3-Py-D24">
                                                 <connections>
-                                                    <segue destination="b0Y-A5-yPT" kind="presentation" modalPresentationStyle="fullScreen" id="Ywa-le-C4A"/>
+                                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="5Mo-6n-6Vf"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem image="moon.circle.fill" catalog="system" id="a0o-Fl-581"/>
@@ -1830,6 +1830,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signupBtn:" destination="354-xP-rIZ" eventType="touchUpInside" id="j7D-J3-VGR"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="Segue_patient_signup" modalPresentationStyle="fullScreen" id="Egi-99-A0X"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="7Hx-UH-IoB">
@@ -1906,7 +1907,6 @@
                         <outlet property="EmmergencyNumberField" destination="pt2-ZK-ZqD" id="54y-WO-Ica"/>
                         <outlet property="birthDatePicker" destination="HMG-W2-jP9" id="whc-xZ-D4x"/>
                         <outlet property="bloodPlicker" destination="7Hx-UH-IoB" id="0Mr-u5-kSm"/>
-                        <segue destination="PNX-6F-7iE" kind="modal" identifier="signup_patient_segue" modalPresentationStyle="fullScreen" id="HUi-ba-q7G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imm-bh-3FS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1934,10 +1934,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HUi-ba-q7G"/>
-        <segue reference="nri-AB-q5X"/>
-        <segue reference="rAn-e4-dIj"/>
-        <segue reference="xJh-xl-jgt"/>
+        <segue reference="vZR-zf-9zw"/>
+        <segue reference="5Mo-6n-6Vf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.15780699249999999" green="0.1279308498" blue="0.95955604309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

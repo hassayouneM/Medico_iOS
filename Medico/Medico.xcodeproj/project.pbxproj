@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
 		5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */; };
 		5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */; };
 		5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4E18CE27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		592B6B9C1542B3D983EB2C91 /* Pods_Medico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationViewController.swift; sourceTree = "<group>"; };
 		5B4E18C827FF8D3200495BDA /* HealthPatientAssistantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPatientAssistantViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				882E0FD1280F8D8C0048F114 /* Constants.swift */,
 				882E0FD3280F90B30048F114 /* DateUtils.swift */,
 				882E0FD5280F960F0048F114 /* Alert.swift */,
+				43EAB2402815223A0029D35B /* LoadingScreen.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				882E0FD6280F960F0048F114 /* Alert.swift in Sources */,
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
 				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
+				43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */,
 				5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */,
 				880BBC212809D58B00E2A84F /* EditMedicationViewController.swift in Sources */,
 				882E0FD2280F8D8C0048F114 /* Constants.swift in Sources */,

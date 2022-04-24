@@ -96,7 +96,7 @@ class DefaultSignUpViewController: UIViewController {
                     
                     let alert = UIAlertController(title: "Success", message: "Your account has been created.", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-                        self.performSegue(withIdentifier: "signup_assistant_segue", sender: self.user)
+                        self.performSegue(withIdentifier: "Segue_Signup_Signin", sender: self.user)
                     }
                     alert.addAction(action)
                     self.present(alert, animated: true)

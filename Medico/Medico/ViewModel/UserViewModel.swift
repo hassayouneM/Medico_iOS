@@ -109,5 +109,24 @@ public class UserViewModel : ObservableObject{
                     debugPrint(error)
                     completed(false, nil)
                 }
-            }    }
+            }
+        
+    }
+    func reSendConfirmationEmail(email: String, completed: @escaping (Bool) -> Void) {
+        AF.request(HOST_URL + "users/reSendConfirmationEmail",
+                   method: .post,
+                   parameters: ["email": email])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("Validation Successful")
+                    completed(true)
+                case let .failure(error):
+                    print(error)
+                    completed(false)
+                }
+            }
+    }
 }

@@ -24,7 +24,7 @@ struct User {
         self.password = password
         self.phone = phone
         self.photo = photo
-        self.isVerified = true
+        self.isVerified = isVerified
 
     }
     
