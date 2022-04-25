@@ -56,7 +56,7 @@ class PatientSignUpViewController: UIViewController {
         UserViewModel().signup(user: self.user!,  completed: { (success) in
             
             if success {
-                //print(self.user?._id)
+                print("deee")
                 let alert = UIAlertController(title: "Success", message: "Your account has been created.", preferredStyle: .alert)
                 let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
                     self.performSegue(withIdentifier: "Segue_patient_signup", sender: true)
@@ -65,7 +65,9 @@ class PatientSignUpViewController: UIViewController {
                 self.present(alert, animated: true)
                 //UserDefaults.standard.set(self.user?.email, forKey: "email")
             } else {
-                self.present(Alert.makeAlert(titre: "Error", message: "Account may already exist."), animated: true)
+                print("aaa")
+
+                self.present(Alert.makeAlert(titre: "Error", message: "Invalid information."), animated: true)
             }
             
         })

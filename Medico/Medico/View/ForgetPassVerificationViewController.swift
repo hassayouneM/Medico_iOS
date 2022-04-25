@@ -13,6 +13,12 @@ class ForgetPassVerificationViewController: UIViewController {
     var data : ForgetPassViewController.MotDePasseOublieData?
     var compteur: Int?
     var compteurTimer : Timer?
+    var email : String?
+    
+    let spinner = SpinnerViewController()
+    
+    
+
     
     //outlets
     
@@ -24,11 +30,24 @@ class ForgetPassVerificationViewController: UIViewController {
     
     @IBAction func ResendBtn(_ sender: Any) {
         
+        data = ForgetPassViewController.MotDePasseOublieData(email: email, code: String(Int.random(in: 1000..<9999)))
         
+        UserViewModel().forgetPassword(email: (data?.email)!, codeDeReinit: (data?.code)! ) { success in
+            self.stopSpinner()
+            if success {
+                print("mail sent")
+            } else {
+                self.present(Alert.makeAlert(titre: "Error", message: "Email does not exist"), animated: true)
+            }
+        }
+        
+        CompteurExpirationLabel.text = "60"
+        compteur = 60
+        startTimer()
     }
     
     @IBAction func NextBtn(_ sender: Any) {
-        print(data?.code)
+        
         if (CodeField.text!.isEmpty){
             self.present(Alert.makeAlert(titre: "Warning", message: "Please type the code"), animated: true)
             return
@@ -88,5 +107,11 @@ class ForgetPassVerificationViewController: UIViewController {
         }
     }
     
+    
+    func stopSpinner() {
+        spinner.willMove(toParent: nil)
+        spinner.view.removeFromSuperview()
+        spinner.removeFromParent()
+    }
 
 }
