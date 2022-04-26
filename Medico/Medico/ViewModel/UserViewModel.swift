@@ -112,27 +112,6 @@ public class UserViewModel : ObservableObject{
             }
         
     }
-    
-//    func getUserByEmail(email :String, completed : @escaping(Bool) -> Void ){
-//        print("Looking for user --------------------")
-//        AF.request(HOST_URL + "users/findByEmail",
-//                   method: .post,
-//                   parameters: ["email": email],
-//                   encoding: JSONEncoding.default)
-//            .validate(statusCode: 200..<300)
-//            .validate(contentType: ["application/json"])
-//            .response { response in
-//                switch response.result {
-//                case .success:
-//                   
-//                    completed(true)
-//                case let .failure(error):
-//                    debugPrint(error)
-//                    completed(false)
-//                }
-//            }
-//    }
-//    
     func reSendConfirmationEmail(email: String, completed: @escaping (Bool) -> Void) {
         AF.request(HOST_URL + "users/reSendConfirmationEmail",
                    method: .post,

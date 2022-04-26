@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -313,6 +313,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="Google logo" title=""/>
+                                <connections>
+                                    <action selector="googleSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sw8-zi-H4k"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-oo-QKj">
                                 <rect key="frame" x="216" y="680" width="40" height="40"/>
@@ -815,7 +818,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cY-F0-zFx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3106" y="1588"/>
+            <point key="canvasLocation" x="3105.7971014492755" y="1572.9910714285713"/>
         </scene>
         <!--Edit Medication View Controller-->
         <scene sceneID="cQg-zO-3qj">
@@ -1918,6 +1921,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="signupBtn:" destination="354-xP-rIZ" eventType="touchUpInside" id="j7D-J3-VGR"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="Segue_patient_signup" modalPresentationStyle="fullScreen" id="Egi-99-A0X"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" semanticContentAttribute="spatial" translatesAutoresizingMaskIntoConstraints="NO" id="7Hx-UH-IoB">
@@ -1994,7 +1998,6 @@
                         <outlet property="EmmergencyNumberField" destination="pt2-ZK-ZqD" id="54y-WO-Ica"/>
                         <outlet property="birthDatePicker" destination="HMG-W2-jP9" id="whc-xZ-D4x"/>
                         <outlet property="bloodPlicker" destination="7Hx-UH-IoB" id="0Mr-u5-kSm"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="Segue_patient_signup" modalPresentationStyle="fullScreen" id="UQK-oe-2CG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Imm-bh-3FS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2022,8 +2025,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rAn-e4-dIj"/>
-        <segue reference="UQK-oe-2CG"/>
+        <segue reference="vZR-zf-9zw"/>
+        <segue reference="nEr-Dz-uZV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.15780699249999999" green="0.1279308498" blue="0.95955604309999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>

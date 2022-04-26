@@ -53,7 +53,6 @@ class ForgetPassViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! ForgetPassVerificationViewController
         destination.data = data
-        destination.email = emailField.text
     }
     
     func startSpinner() {

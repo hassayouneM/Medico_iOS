@@ -7,8 +7,14 @@
 
 import UIKit
 import Alamofire
+import GoogleSignIn
 
 class SignInViewController: UIViewController {
+    
+    // related to signin with google
+    //Google client ID
+    //430426686039-3kf1jlcrffpssn8aj5k20ndaguc0877g.apps.googleusercontent.com
+    let signInConfig = GIDConfiguration.init(clientID: "430426686039-3kf1jlcrffpssn8aj5k20ndaguc0877g.apps.googleusercontent.com")
 
     //var
     let userViewModel = UserViewModel()
@@ -22,9 +28,6 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
-    
-    
     
     
     //Functions
@@ -53,9 +56,6 @@ class SignInViewController: UIViewController {
    
     
     //Actions
-    
-  
-
     
     @IBAction func SignInBtn(_ sender: Any) {
         
@@ -96,15 +96,56 @@ class SignInViewController: UIViewController {
     }
     
     
+    // Sign in with google
     
-    
-    
+    @IBAction func googleSignIn(_ sender: Any) {
+        
+        
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+
+            // If sign in succeeded, display the app's main content View.
+            guard let user = user else { return }
+
+            let emailAddress = user.profile?.email
+            self.emailField.text = emailAddress
+            
+            self.performSegue(withIdentifier: "SegueSigninAssistant", sender: nil)
+
+            //server
+            //
+            /*user.authentication.do { authentication, error in
+                    guard error == nil else { return }
+                    guard let authentication = authentication else { return }
+
+                    let idToken = authentication.idToken
+                    // Send ID token to backend (example below).
+                tokenSignInExample(idToken: idToken!)
+                print(idToken)
+            
+            }
+            //FUNCTION
+            func tokenSignInExample(idToken: String) {
+                guard let authData = try? JSONEncoder().encode(["idToken": idToken]) else {
+                    return
+                }
+                let url = URL(string: "http://localhost:3000/users/googlesignin")!
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+                let task = URLSession.shared.uploadTask(with: request, from: authData) { data, response, error in
+                    // Handle response from your backend.
+                }
+                task.resume()
+            }*/
+    }
+        
+    }
+            
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.text = email
 
     }
-
-
-
 }
+
