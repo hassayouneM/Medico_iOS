@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43AD76EB2817BF17005FAE4A /* AssistantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AD76EA2817BF17005FAE4A /* AssistantViewModel.swift */; };
 		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
 		43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB24228152E540029D35B /* NewPasswordViewController.swift */; };
 		5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43AD76EA2817BF17005FAE4A /* AssistantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssistantViewModel.swift; sourceTree = "<group>"; };
 		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		43EAB24228152E540029D35B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		592B6B9C1542B3D983EB2C91 /* Pods_Medico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				882E0FCE280F8BB20048F114 /* UserViewModel.swift */,
+				43AD76EA2817BF17005FAE4A /* AssistantViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */,
+				43AD76EB2817BF17005FAE4A /* AssistantViewModel.swift in Sources */,
 				882E0FD4280F90B30048F114 /* DateUtils.swift in Sources */,
 				882E0FCF280F8BB20048F114 /* UserViewModel.swift in Sources */,
 				882E0FD6280F960F0048F114 /* Alert.swift in Sources */,
