@@ -12,9 +12,11 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
 
     //var
     
-    let names = ["patient 1", "patient 2", "patient 3"]
+    var assistant : User?
+    //let names = ["patient 1", "patient 2", "patient 3"]
     
-    var filteredNames = [String]()
+    var filteredPatients : [User] = []
+    private var patients : [User] = []
     
     
     //outlets
@@ -35,21 +37,32 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     
 
     override func viewDidLoad() {
+       
         super.viewDidLoad()
+        
+        
+        initializePage()
+        
         
         searchBar.delegate = self
         
-        filteredNames = names
     }
-    
+    func initializePage() {
+        
+        UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
+            [self] success, result in self.assistant = result
+            
+        }
+        fetchPatientList()
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return filteredNames.count
-        
+        return filteredPatients.count
+        //return patients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,12 +71,11 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
         let PLCell = tableView.dequeueReusableCell(withIdentifier: "PLCell")!
         
         let cv = PLCell.contentView
-        let MedImg = cv.viewWithTag(1) as! UIImageView
+       // let MedImg = cv.viewWithTag(1) as! UIImageView
         let name = cv.viewWithTag(2) as! UILabel
         
-        MedImg.image = UIImage(named: filteredNames[indexPath.row])
-        name.text = filteredNames[indexPath.row]
-        
+        //MedImg.image = UIImage(named: filteredNames[indexPath.row])
+        name.text = filteredPatients[indexPath.row].name
         return PLCell
     }
     
@@ -72,15 +84,35 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
         performSegue(withIdentifier: "patientList_patientDetails", sender: indexPath)
     }
 
+    
+    func fetchPatientList() {
+        print("---------------------")
+        print(UserDefaults.standard.string(forKey: "id")!)
+        print("---------------------")
+
+        
+        UserViewModel.sharedInstance.getPatientslist(id: UserDefaults.standard.string(forKey: "id")!) {[self] success, patientList in
+            if success{
+                patients = patientList!
+                filteredPatients=patients
+                tableView.reloadData()
+            }else{
+                self.present(Alert.makeServerErrorAlert(), animated: true)
+            }
+         
+        }
+        
+    }
+
     //searhBar config
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredNames = []
+        filteredPatients = []
         if searchText == "" {
-            filteredNames = names
+            filteredPatients = patients
         }else{
-            for name in names {
-                if name.lowercased().contains(searchText.lowercased()){
-                    filteredNames.append(name)
+            for patient in patients {
+                if (patient.name)!.lowercased().contains(searchText.lowercased()){
+                    filteredPatients.append(patient)
                 }
             }
         }

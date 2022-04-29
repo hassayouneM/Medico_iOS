@@ -6,31 +6,26 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomePatientViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-    
     //var
-    var meds = ["pill4", "pill1","pill2", "pill3","pill4", "pill1" ]
-    var categories = ["Blood pressure Medicine", "Blood sugar Medicine", "Blood sugar Medicine","Blood pressure Medicine","Blood sugar Medicine","Blood pressure Medicine"]
-    var frequencies = ["20h00 / 1 pill", "08h00 / 2 pills", "20h00 / 1 pill", "08h00 / 2 pills", "11h30 / 1 pill", "11h30 / 1 pill" ]
-    let times = ["Before Meal","After Meal","Before Meal", "After Meal", "After Meal","After Meal"]
-
+    var user : User?
+    var medicine : Medicine?
+    
+    var meds : [Medicine] = []
+    
     //outlets
     
-    
-    //actions
-    
-    
-    
+    @IBOutlet weak var tableView: UITableView!
     
     //functions
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        fetchData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,24 +33,35 @@ class HomePatientViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let TVCell = tableView.dequeueReusableCell(withIdentifier: "PCell", for: indexPath)
+        
+        let TVCell = tableView.dequeueReusableCell(withIdentifier: "PCell")!
         let cv = TVCell.contentView
-        let MedImg = cv.viewWithTag(1) as! UIImageView
+        //let MedImg = cv.viewWithTag(1) as! UIImageView
         let name = cv.viewWithTag(2) as! UILabel
         let category = cv.viewWithTag(3) as! UILabel
         let time = cv.viewWithTag(4) as! UILabel
         let BorA = cv.viewWithTag(5) as! UILabel
-
-        
-        MedImg.image = UIImage(named: meds[indexPath.row])
-        name.text = meds[indexPath.row]
-        category.text = categories[indexPath.row]
-        time.text = frequencies[indexPath.row]
-        BorA.text = times[indexPath.row]
-
+//        MedImg.image = UIImage(named: meds[indexPath.row])
+       
+        medicine = meds[indexPath.row]
+        name.text = medicine?.name!
+        category.text = medicine?.category!
+//        time.text = medicine?.notif_time
+//        BorA.text = medicine?.borA!
         return TVCell
     }
     
+    func fetchData() {
+        
+        UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
+            [self] success, result in self.user = result
+            
+            meds = result!.medicines
+          
+            tableView.reloadData()
+        }
+       
+        
 
-
+    }
 }

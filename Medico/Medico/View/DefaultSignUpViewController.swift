@@ -78,7 +78,7 @@ class DefaultSignUpViewController: UIViewController {
         user.email = emailField.text
         user.password  = PassField.text
         user.phone = Int(PhoneNumberField.text!)
-        print(type(of: user.phone))
+        //print(type(of: user.phone))
         user.is_assistant = isAssistantSwitch.isOn
         user.birthdate = Date.now
         user.photo = ""
@@ -86,7 +86,7 @@ class DefaultSignUpViewController: UIViewController {
         user.assistant_email = ""
         user.blood_type = ""
         user.emergency_num = 0
-        
+        //user.medicines = []
         
         if isAssistantSwitch.isOn {
             

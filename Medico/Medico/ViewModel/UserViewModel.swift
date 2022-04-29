@@ -69,70 +69,75 @@ public class UserViewModel : ObservableObject{
     
     func makeItem(jsonItem: JSON) -> User {
         
+        //array parsing
+        var medicines :[Medicine] = []
+        let medsList = jsonItem["medicines"]
+        let medsCount = medsList.array?.count ?? 0
+        print("medscount----------------")
+        print(medsCount)
+        for i in 0..<medsCount {
+
+           var med = Medicine(
+
+            _id: medsList[i]["_id"].stringValue,
+            name: medsList[i]["name"].stringValue,
+            quantity: medsList[i]["quantity"].intValue,
+            photo: medsList[i]["photo"].stringValue,
+            category: medsList[i]["category"].stringValue,
+                notif_time : DateUtils.formatFromString(string:medsList[i]["category"].stringValue),
+                until : DateUtils.formatFromString(string:medsList[i]["until"].stringValue)
+                
+            )
+            medicines.append(med)
+        }
         
         return User(
-            _id: jsonItem["_id"].stringValue,
-            name: jsonItem["name"].stringValue,
-            birthdate: DateUtils.formatFromString(string: jsonItem["birthdate"].stringValue),
-            address : jsonItem["address"].stringValue,
-            assistant_email : jsonItem["assistant_email"].stringValue,
-            blood_type : jsonItem["blood_type"].stringValue,
-            email: jsonItem["email"].stringValue,
-            emergency_num : jsonItem["emergency_num"].intValue,
-            is_assistant : jsonItem["is_assistant"].boolValue,
-            password: jsonItem["password"].stringValue,
-            phone : jsonItem["phone"].intValue,
-            photo: jsonItem["idPhoto"].stringValue,
-            isVerified: jsonItem["isVerified"].boolValue
-          
-        )
+                    _id: jsonItem["_id"].stringValue,
+                    name: jsonItem["name"].stringValue,
+                    birthdate: DateUtils.formatFromString(string: jsonItem["birthdate"].stringValue),
+                    address : jsonItem["address"].stringValue,
+                    assistant_email : jsonItem["assistant_email"].stringValue,
+                    blood_type : jsonItem["blood_type"].stringValue,
+                    email: jsonItem["email"].stringValue,
+                    emergency_num : jsonItem["emergency_num"].intValue,
+                    is_assistant : jsonItem["is_assistant"].boolValue,
+                    password: jsonItem["password"].stringValue,
+                    phone : jsonItem["phone"].intValue,
+                    photo: jsonItem["idPhoto"].stringValue,
+                    isVerified: jsonItem["isVerified"].boolValue,
+                    medicines: medicines
+                )
     }
     func getUserById(id: String, completed: @escaping(Bool, User?) -> Void) {
-        print("Looking for user --------------------")
-        AF.request(HOST_URL + "users/findById",
-                   method: .post,
-                   parameters: ["id": UserDefaults.standard.string(forKey: "id")],
-                   encoding: JSONEncoding.default)
-            .validate(statusCode: 200..<300)
-            .validate(contentType: ["application/json"])
-            .response { response in
-                switch response.result {
-                case .success:
-                    let jsonData = JSON(response.data!)
-                    let user = self.makeItem(jsonItem: jsonData["user"])
-                    print("Found user --------------------")
-                    print(user)
-                    print("-------------------------------")
-                   
-                    completed(true, user)
-                case let .failure(error):
-                    debugPrint(error)
-                    completed(false, nil)
+            print("Looking for user --------------------")
+            AF.request(HOST_URL + "users/findById",
+                       method: .post,
+                       parameters: ["id": UserDefaults.standard.string(forKey: "id")],
+                       encoding: JSONEncoding.default)
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/json"])
+                .response { response in
+                    switch response.result {
+                    case .success:
+                        let jsonData = JSON(response.data!)
+                        //array reading
+                        
+                        
+                        
+                        let user = self.makeItem(jsonItem: jsonData["user"])
+                        print("Found user --------------------")
+                        print(user)
+                        print("-------------------------------")
+                       
+                        completed(true, user)
+                    case let .failure(error):
+                        debugPrint(error)
+                        completed(false, nil)
+                    }
                 }
-            }
+            
+        }
         
-    }
-    
-//    func getUserByEmail(email :String, completed : @escaping(Bool) -> Void ){
-//        print("Looking for user --------------------")
-//        AF.request(HOST_URL + "users/findByEmail",
-//                   method: .post,
-//                   parameters: ["email": email],
-//                   encoding: JSONEncoding.default)
-//            .validate(statusCode: 200..<300)
-//            .validate(contentType: ["application/json"])
-//            .response { response in
-//                switch response.result {
-//                case .success:
-//                   
-//                    completed(true)
-//                case let .failure(error):
-//                    debugPrint(error)
-//                    completed(false)
-//                }
-//            }
-//    }
-//    
     func reSendConfirmationEmail(email: String, completed: @escaping (Bool) -> Void) {
         AF.request(HOST_URL + "users/reSendConfirmationEmail",
                    method: .post,
@@ -206,6 +211,30 @@ public class UserViewModel : ObservableObject{
                     UserDefaults.standard.setValue(user._id, forKey: "idUser")
                    
                     completed(true, user)
+                case let .failure(error):
+                    debugPrint(error)
+                    completed(false, nil)
+                }
+            }
+    }
+    func getPatientslist(id:String,completed: @escaping (Bool,[User]?)->Void){
+        
+        AF.request(HOST_URL + "users/getPatients",
+                   method: .post,
+                   parameters: [ "id" : id ],
+                   encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    let jsonData = JSON(response.data!)
+                    
+                    var patientsList : [User]? = []
+                    for singleJsonItem in jsonData["response"] {
+                        patientsList!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    }
+                    completed(true, patientsList)
                 case let .failure(error):
                     debugPrint(error)
                     completed(false, nil)

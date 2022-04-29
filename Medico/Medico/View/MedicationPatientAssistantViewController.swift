@@ -56,6 +56,4 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "EditMedSegue", sender: indexPath)
     }
-    
-
 }

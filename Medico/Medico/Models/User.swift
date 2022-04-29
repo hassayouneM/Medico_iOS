@@ -10,7 +10,7 @@ import Foundation
 
 struct User {
     
-    internal init(_id: String? = nil, name: String? = nil, birthdate: Date? = nil, address: String? = nil, assistant_email: String? = nil, blood_type: String? = nil, email: String? = nil, emergency_num: Int? = nil, is_assistant: Bool? = nil, password: String? = nil, phone: Int? = nil, photo: String? = nil, isVerified: Bool? = nil){
+    internal init(_id: String? = nil, name: String? = nil, birthdate: Date? = nil, address: String? = nil, assistant_email: String? = nil, blood_type: String? = nil, email: String? = nil, emergency_num: Int? = nil, is_assistant: Bool? = nil, password: String? = nil, phone: Int? = nil, photo: String? = nil, isVerified: Bool? = nil, medicines:[Medicine] = []){
         
         self._id = _id
         self.name = name
@@ -25,7 +25,7 @@ struct User {
         self.phone = phone
         self.photo = photo
         self.isVerified = isVerified
-
+        self.medicines = medicines
     }
     
     
@@ -43,6 +43,6 @@ struct User {
     var phone : Int?
     var photo : String?
     var isVerified : Bool?
-    
+    var medicines : [Medicine]=[]
 }
 

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftyJSON
+import Alamofire
+
+public class AssistantViewModel : ObservableObject{
+    
+    static let sharedInsatance = AssistantViewModel()
+    
+    
+    
+    
+}
