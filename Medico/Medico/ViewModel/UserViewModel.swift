@@ -241,4 +241,36 @@ public class UserViewModel : ObservableObject{
                 }
             }
     }
+    
+    func updateProfile (user: User, methode: HTTPMethod, completed: @escaping (Bool) -> Void) {
+            print(user)
+            AF.request(HOST_URL + "users/updateProfile",
+                       method: methode,
+                       parameters: [
+                        "blood_type" : user.blood_type!,
+                        "emergency_num": user.emergency_num!,
+                        "email": user.email!,
+                        "address": user.address!,
+                        "name": user.name!,
+                        "assistant_email": user.assistant_email!,
+                        "birthdate": DateUtils.formatFromDate(date: user.birthdate!),
+                        //"photo": utilisateur.photo!,
+                    
+                       ])
+                .response { response in
+                    print(response)
+                }
+        }
+    
 }
+//func getAssistantName (assistant_email: String , methode : HTTPMethod, completed: @escaping(Bool)->Void){
+//    AF.request(HOST_URL + "users/getAssistantName",
+//               method: methode,
+//               parameters: [
+//                "assistant_email" : assistant_email!,
+//               ])
+//        .response { response in
+//            print(response)
+//        }
+//}
+//}

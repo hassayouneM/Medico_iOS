@@ -43,12 +43,11 @@ class ProfilePatientViewController: UIViewController {
         UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
             [self] success, result in self.user = result
             
-            nameLabel.text = result?.name
-            assistantEmailLabel.text = result?.assistant_email
-            adresseLabel.text = result?.address
-            EmergencyPhoneLabel.text = String(Int(result?.emergency_num ?? 0))
-            bloodTypelabel.text = result?.blood_type
-            assistantNameLabel.text = result?.medicines[0].name
+            nameLabel.text = (result?.name)!
+            assistantEmailLabel.text = (result?.assistant_email)!
+            adresseLabel.text = (result?.address)!
+            EmergencyPhoneLabel.text = String(Int((result?.emergency_num)!))
+            bloodTypelabel.text = (result?.blood_type)!
             
         }
         
