@@ -18,7 +18,6 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     var filteredPatients : [User] = []
     private var patients : [User] = []
     
-    
     //outlets
     
     
@@ -29,13 +28,13 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBAction func logoutBtn(_ sender: Any) {
     }
-    
+    var i = 1
     @IBAction func DarkmodeBtn(_ sender: Any) {
+        
     }
     //functions
     
     
-
     override func viewDidLoad() {
        
         super.viewDidLoad()
@@ -81,10 +80,12 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        UserDefaults.standard.setValue(filteredPatients[indexPath.row]._id, forKey: "patientId")
+        print("----------------patientId")
+        print(UserDefaults.standard.string(forKey: "patientId"))
         performSegue(withIdentifier: "patientList_patientDetails", sender: indexPath)
     }
 
-    
     func fetchPatientList() {
         print("---------------------")
         print(UserDefaults.standard.string(forKey: "id")!)
@@ -99,9 +100,7 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
             }else{
                 self.present(Alert.makeServerErrorAlert(), animated: true)
             }
-         
         }
-        
     }
 
     //searhBar config
@@ -119,18 +118,6 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.reloadData()
     }
     
-
-//    //Alert
-//    func DeleteAlert(title : String, message : String){
-//        
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-//
-//        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.default, handler: nil))
-//                alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-//
-//             
-//        self.present(alert, animated: true, completion: nil)
-//    }
 }
 
 

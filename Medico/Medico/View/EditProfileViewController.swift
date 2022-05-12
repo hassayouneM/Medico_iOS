@@ -50,6 +50,8 @@ class EditProfileViewController: UIViewController {
             return
         }
         
+    //    viewDidAppear(<#T##animated: Bool##Bool#>)
+      //  diddis
         
         //user?.idPhoto = ""
         
@@ -69,7 +71,6 @@ class EditProfileViewController: UIViewController {
         } )
         
         _ = navigationController?.popViewController(animated: true)
-
       
     }
     

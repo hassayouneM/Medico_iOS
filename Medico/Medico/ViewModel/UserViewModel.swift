@@ -73,8 +73,7 @@ public class UserViewModel : ObservableObject{
         var medicines :[Medicine] = []
         let medsList = jsonItem["medicines"]
         let medsCount = medsList.array?.count ?? 0
-        print("medscount----------------")
-        print(medsCount)
+
         for i in 0..<medsCount {
 
            var med = Medicine(
@@ -83,9 +82,10 @@ public class UserViewModel : ObservableObject{
             name: medsList[i]["name"].stringValue,
             quantity: medsList[i]["quantity"].intValue,
             photo: medsList[i]["photo"].stringValue,
+            borA: medsList[i]["borA"].stringValue,
             category: medsList[i]["category"].stringValue,
-                notif_time : DateUtils.formatFromString(string:medsList[i]["category"].stringValue),
-                until : DateUtils.formatFromString(string:medsList[i]["until"].stringValue)
+            notif_time : DateUtils.formatFromString(string:medsList[i]["category"].stringValue),
+            until : DateUtils.formatFromString(string:medsList[i]["until"].stringValue)
                 
             )
             medicines.append(med)
@@ -112,7 +112,7 @@ public class UserViewModel : ObservableObject{
             print("Looking for user --------------------")
             AF.request(HOST_URL + "users/findById",
                        method: .post,
-                       parameters: ["id": UserDefaults.standard.string(forKey: "id")],
+                       parameters: ["id": id],
                        encoding: JSONEncoding.default)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: ["application/json"])

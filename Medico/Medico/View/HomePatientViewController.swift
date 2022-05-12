@@ -46,8 +46,8 @@ class HomePatientViewController: UIViewController, UITableViewDelegate, UITableV
         medicine = meds[indexPath.row]
         name.text = medicine?.name!
         category.text = medicine?.category!
-//        time.text = medicine?.notif_time
-//        BorA.text = medicine?.borA!
+        time.text = DateUtils.formatFromDateForDisplayHoursMin(date: (medicine?.notif_time) as! Date)
+        BorA.text = medicine?.borA!
         return TVCell
     }
     
@@ -61,7 +61,5 @@ class HomePatientViewController: UIViewController, UITableViewDelegate, UITableV
             tableView.reloadData()
         }
        
-        
-
     }
 }

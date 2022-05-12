@@ -37,6 +37,7 @@
 		882E0FD6280F960F0048F114 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882E0FD5280F960F0048F114 /* Alert.swift */; };
 		88352ECF2806184C000E29BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88352ECE2806184C000E29BA /* User.swift */; };
 		88352ED128061861000E29BA /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88352ED028061861000E29BA /* Medicine.swift */; };
+		884FC43F282B35D3009F2175 /* MedicineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884FC43E282B35D3009F2175 /* MedicineViewModel.swift */; };
 		C96A3A7EC9017F868D4BFC9B /* Pods_Medico.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 592B6B9C1542B3D983EB2C91 /* Pods_Medico.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		882E0FD5280F960F0048F114 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		88352ECE2806184C000E29BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = User.swift; sourceTree = "<group>"; };
 		88352ED028061861000E29BA /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		884FC43E282B35D3009F2175 /* MedicineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineViewModel.swift; sourceTree = "<group>"; };
 		8948CADBD367BC2085C9FD16 /* Pods-Medico.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medico.debug.xcconfig"; path = "Target Support Files/Pods-Medico/Pods-Medico.debug.xcconfig"; sourceTree = "<group>"; };
 		C972BEE01F69E3252D24C7C6 /* Pods-Medico.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Medico.release.xcconfig"; path = "Target Support Files/Pods-Medico/Pods-Medico.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				882E0FCE280F8BB20048F114 /* UserViewModel.swift */,
+				884FC43E282B35D3009F2175 /* MedicineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				882E0FD4280F90B30048F114 /* DateUtils.swift in Sources */,
 				882E0FCF280F8BB20048F114 /* UserViewModel.swift in Sources */,
 				882E0FD6280F960F0048F114 /* Alert.swift in Sources */,
+				884FC43F282B35D3009F2175 /* MedicineViewModel.swift in Sources */,
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
 				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
 				43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */,

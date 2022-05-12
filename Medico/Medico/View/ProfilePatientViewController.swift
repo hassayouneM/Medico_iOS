@@ -14,6 +14,9 @@ class ProfilePatientViewController: UIViewController {
     
     var user : User?
     
+    var age: Int?
+    var Birthdate : Date?
+    
     //outlets
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -34,11 +37,12 @@ class ProfilePatientViewController: UIViewController {
         super.viewDidLoad()
 
         initializePage()
-        // Do any additional setup after loading the view.
+        self.loadView()
     }
     
 
     func initializePage() {
+        
         
         UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
             [self] success, result in self.user = result
@@ -48,10 +52,15 @@ class ProfilePatientViewController: UIViewController {
             adresseLabel.text = (result?.address)!
             EmergencyPhoneLabel.text = String(Int((result?.emergency_num)!))
             bloodTypelabel.text = (result?.blood_type)!
+            Birthdate = (result?.birthdate)!
+            print("------------------date")
+            print(type(of: Birthdate))
+            ageLabel.text = String(Calendar.current.dateComponents([.year], from: Birthdate!, to: Date()).year!)
+            print(age)
+            
             
         }
         
     }
    
-
 }
