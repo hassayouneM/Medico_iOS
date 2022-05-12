@@ -11,7 +11,9 @@ class assistantProfileViewController: UIViewController {
 
     //var
     var user : User?
-    
+    var email=""
+    var assistant : User?
+
     var age: Int?
     var Birthdate : Date?
     //outlets
@@ -19,13 +21,13 @@ class assistantProfileViewController: UIViewController {
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var assistantNameLabel: UILabel!
     @IBOutlet weak var adresseLabel: UILabel!
     @IBOutlet weak var EmergencyPhoneLabel: UILabel!
     @IBOutlet weak var bloodTypelabel: UILabel!
     @IBOutlet weak var assistantEmailLabel: UILabel!
     
     
+    @IBOutlet weak var assistantName: UILabel!
     //actions
  
     
@@ -54,6 +56,19 @@ class assistantProfileViewController: UIViewController {
             print(type(of: Birthdate))
             ageLabel.text = String(Calendar.current.dateComponents([.year], from: Birthdate!, to: Date()).year!)
             
+            
+            email = (result?.assistant_email)!
+            print(email)
+            
+            UserViewModel().getAssistant(email: email) {
+                
+                [self] success, result in self.assistant = result
+                print(email)
+                print("___________________")
+                print(UserDefaults.standard.string(forKey: "assistantName")!)
+                assistantName.text = UserDefaults.standard.string(forKey: "assistantName")!
+                
+            }
             
         }
         
