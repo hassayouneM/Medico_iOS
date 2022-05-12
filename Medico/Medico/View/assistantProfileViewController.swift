@@ -1,23 +1,21 @@
 //
-//  ProfilePatientViewController.swift
+//  assistantProfileViewController.swift
 //  Medico
 //
-//  Created by Mac-Mini-2021 on 07/04/2022.
+//  Created by Apple Esprit on 12/5/2022.
 //
 
 import UIKit
 
-class ProfilePatientViewController: UIViewController {
+class assistantProfileViewController: UIViewController {
 
     //var
-    
     var user : User?
-    var assistant : User?
-    var email=""
+    
     var age: Int?
     var Birthdate : Date?
-    
     //outlets
+    
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
@@ -29,20 +27,21 @@ class ProfilePatientViewController: UIViewController {
     
     
     //actions
+ 
     
-    //functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         initializePage()
-        self.viewDidAppear(true)
+        self.loadView()
     }
     
 
     func initializePage() {
         
         
-        UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
+        UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "patientId")!) {
             [self] success, result in self.user = result
             
             nameLabel.text = (result?.name)!
@@ -54,24 +53,10 @@ class ProfilePatientViewController: UIViewController {
             print("------------------date")
             print(type(of: Birthdate))
             ageLabel.text = String(Calendar.current.dateComponents([.year], from: Birthdate!, to: Date()).year!)
-            print(age)
             
-            email = (result?.assistant_email)!
-            print(email)
             
-            UserViewModel().getAssistant(email: email) {
-                
-                [self] success, result in self.assistant = result
-                print(email)
-                print("___________________")
-                print(UserDefaults.standard.string(forKey: "assistantName")!)
-                assistantNameLabel.text = UserDefaults.standard.string(forKey: "assistantName")!
-                
-            }
         }
         
-        
-        
     }
-   
+
 }

@@ -122,8 +122,6 @@ public class UserViewModel : ObservableObject{
                         let jsonData = JSON(response.data!)
                         //array reading
                         
-                        
-                        
                         let user = self.makeItem(jsonItem: jsonData["user"])
                         print("Found user --------------------")
                         print(user)
@@ -138,6 +136,34 @@ public class UserViewModel : ObservableObject{
             
         }
         
+    func getAssistant(email: String, completed: @escaping(Bool, User?) -> Void) {
+            print("Looking for user --------------------")
+            AF.request(HOST_URL + "users/getAssistant",
+                       method: .post,
+                       parameters: ["email": email],
+                       encoding: JSONEncoding.default)
+                .validate(statusCode: 200..<300)
+                .validate(contentType: ["application/json"])
+                .response { response in
+                    switch response.result {
+                    case .success:
+                        let jsonData = JSON(response.data!)
+                        //array reading
+                        
+                        let user = self.makeItem(jsonItem: jsonData["user"])
+                        print("Found user --------------------")
+                        print(user)
+                        print("-------------------------------")
+                        UserDefaults.standard.setValue(user.name, forKey: "assistantName")
+
+                        completed(true, user)
+                    case let .failure(error):
+                        debugPrint(error)
+                        completed(false, nil)
+                    }
+                }
+        }
+    
     func reSendConfirmationEmail(email: String, completed: @escaping (Bool) -> Void) {
         AF.request(HOST_URL + "users/reSendConfirmationEmail",
                    method: .post,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08FAB934282D7C3A0037C7C8 /* assistantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */; };
 		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
 		43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB24228152E540029D35B /* NewPasswordViewController.swift */; };
 		5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantProfileViewController.swift; sourceTree = "<group>"; };
 		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		43EAB24228152E540029D35B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
 		592B6B9C1542B3D983EB2C91 /* Pods_Medico.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Medico.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				880388E52805E49D00328D77 /* EditProfileViewController.swift */,
 				880BBC202809D58B00E2A84F /* EditMedicationViewController.swift */,
 				43EAB24228152E540029D35B /* NewPasswordViewController.swift */,
+				08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				882E0FD2280F8D8C0048F114 /* Constants.swift in Sources */,
 				5B4E18CF27FF8F6400495BDA /* MedicationPatientAssistantViewController.swift in Sources */,
 				5B4E18C927FF8D3200495BDA /* HealthPatientAssistantViewController.swift in Sources */,
+				08FAB934282D7C3A0037C7C8 /* assistantProfileViewController.swift in Sources */,
 				880388E22805D82200328D77 /* ForgetPassViewController.swift in Sources */,
 				88352ED128061861000E29BA /* Medicine.swift in Sources */,
 				880BB7DE27F46A46005C3E20 /* SignInViewController.swift in Sources */,
