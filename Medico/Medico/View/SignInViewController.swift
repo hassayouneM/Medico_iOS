@@ -101,7 +101,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emailField.text = email
+        emailField.text = "mouna.hassayoune@gmail.com"
+        passwordField.text = "mouna"
 
     }
 
