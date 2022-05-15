@@ -288,7 +288,54 @@ public class UserViewModel : ObservableObject{
                 }
         }
     
+    //
+    // something added for chat
+    func recupererToutUtilisateur( completed: @escaping (Bool, [User]?) -> Void ) {
+
+        AF.request(HOST_URL + "users/getusers",
+
+
+                       method: .get)
+
+                .validate(statusCode: 200..<300)
+
+                .validate(contentType: ["application/json"])
+
+                .responseData { response in
+
+                    switch response.result {
+
+                    case .success:
+
+                        var utilisateurs : [User]? = []
+
+                        for singleJsonItem in JSON(response.data!)["users"] {
+                            utilisateurs!.append(self.makeItem(jsonItem: singleJsonItem.1))
+
+                        }
+
+                        completed(true, utilisateurs)
+
+                    case let .failure(error):
+
+                        debugPrint(error)
+
+                        completed(false, nil)
+
+                    }
+
+                }
+
+        }
+    
+    
 }
+
+
+
+
+
+
 //func getAssistantName (assistant_email: String , methode : HTTPMethod, completed: @escaping(Bool)->Void){
 //    AF.request(HOST_URL + "users/getAssistantName",
 //               method: methode,

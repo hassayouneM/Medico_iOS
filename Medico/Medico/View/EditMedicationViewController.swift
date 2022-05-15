@@ -29,7 +29,10 @@ class EditMedicationViewController: UIViewController {
     //action
 
     
-    @IBAction func confirmBtn(_ sender: Any) {
+    @IBAction func confirmBtn(_ sender: UIButton) {
+        
+        //ANIMATION
+        sender.flash()
         
         //EMPTY FIELD VERFICATION
         if (nameInput.text!.isEmpty) {

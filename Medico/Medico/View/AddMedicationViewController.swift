@@ -28,7 +28,10 @@ class AddMedicationViewController: UIViewController {
     
     //action
     
-    @IBAction func AddMedBtn(_ sender: Any) {
+    @IBAction func AddMedBtn(_ sender: UIButton) {
+        
+        //ANIMATIONN
+        sender.flash()
         
         //EMPTY FIELD VERFICATION
         if (nameInput.text!.isEmpty) {
