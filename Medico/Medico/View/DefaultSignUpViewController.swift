@@ -32,7 +32,9 @@ class DefaultSignUpViewController: UIViewController {
     
     
     //action
-    @IBAction func nextbtn(_ sender: Any) {
+    @IBAction func nextbtn(_ sender: UIButton) {
+        
+        sender.flash()
         
         //Empty Fields Verfication
         if (nameField.text == "") {

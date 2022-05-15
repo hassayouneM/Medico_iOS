@@ -14,9 +14,9 @@ public class ChatViewModel: ObservableObject{
     static let sharedInstance = ChatViewModel()
     
     func recupererMesConversations( completed: @escaping (Bool, [Conversation]?) -> Void ) {
-        AF.request(HOST_URL + "chats/myConversations",
+        AF.request(HOST_URL + "chat/my-conversations",
                    method: .post,
-                   parameters: [ "envoyeur" : UserDefaults.standard.string(forKey: "id")!],
+                   parameters: [ "sender" : UserDefaults.standard.string(forKey: "id")!],
                    encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
@@ -38,11 +38,11 @@ public class ChatViewModel: ObservableObject{
     }
     
     func creerNouvelleConversation(recepteur: String, completed: @escaping (Bool, Conversation?) -> Void ) {
-        AF.request(HOST_URL + "chats/createConversation",
+        AF.request(HOST_URL + "chat/creer-conversation",
                    method: .post,
                    parameters: [
-                    "envoyeur" : UserDefaults.standard.string(forKey: "id")!,
-                    "recepteur" : recepteur
+                    "sender" : UserDefaults.standard.string(forKey: "id")!,
+                    "receiver" : recepteur
                    ],
                    encoding: JSONEncoding.default)
             .validate(statusCode: 200..<300)
@@ -59,7 +59,7 @@ public class ChatViewModel: ObservableObject{
     }
 
     func recupererMesMessages(idConversation: String, completed: @escaping (Bool, [Message]?) -> Void ) {
-        AF.request(HOST_URL + "chats/myMessages",
+        AF.request(HOST_URL + "chat/my-messages",
                    method: .post,
                    parameters: [ "conversation" : idConversation ],
                    encoding: JSONEncoding.default)
@@ -83,11 +83,11 @@ public class ChatViewModel: ObservableObject{
     }
     
     func envoyerMessage(recepteur: String, description: String, completed: @escaping (Bool, Message?) -> Void ) {
-        AF.request(HOST_URL + "chats/sendMessage",
+        AF.request(HOST_URL + "chat/envoyer-message",
                    method: .post,
                    parameters: [
-                    "envoyeur": UserDefaults.standard.string(forKey: "id")!,
-                    "recepteur": recepteur,
+                    "sender": UserDefaults.standard.string(forKey: "id")!,
+                    "receiver": recepteur,
                     "description": description
                    ],
                    encoding: JSONEncoding.default)
@@ -106,7 +106,7 @@ public class ChatViewModel: ObservableObject{
     
     func makeMessage(jsonItem: JSON) -> Message {
         return Message(
-            sender: Sender(senderId: jsonItem["conversationEnvoyeur"]["envoyeur"].stringValue, displayName: "abc"),
+            sender: Sender(senderId: jsonItem["conversationEnvoyeur"]["sender"].stringValue, displayName: "abc"),
             messageId: jsonItem["_id"].stringValue,
             sentDate: Date(),
             kind: .text(jsonItem["description"].stringValue)
@@ -116,10 +116,10 @@ public class ChatViewModel: ObservableObject{
     func makeConversation(jsonItem: JSON) -> Conversation {
         return Conversation(
             _id: jsonItem["_id"].stringValue,
-            dernierMessage: jsonItem["dernierMessage"].stringValue,
-            dateDernierMessage: DateUtils.formatFromString(string: jsonItem["dateDernierMessage"].stringValue),
-            envoyeur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["envoyeur"]),
-            recepteur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["recepteur"])
+            dernierMessage: jsonItem["lastMessage"].stringValue,
+            dateDernierMessage: DateUtils.formatFromString(string: jsonItem["lastMessageDate"].stringValue),
+            envoyeur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["sender"]),
+            recepteur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["receiver"])
         )
     }
     

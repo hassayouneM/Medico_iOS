@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class SignInViewController: UIViewController {
-
+    
     //var
     let userViewModel = UserViewModel()
 
@@ -82,7 +82,9 @@ class SignInViewController: UIViewController {
   
 
     
-    @IBAction func SignInBtn(_ sender: Any) {
+    @IBAction func SignInBtn(_ sender: UIButton) {
+        
+        sender.shake()
         
         if(emailField.text!.isEmpty || passwordField.text!.isEmpty){
             self.present(Alert.makeAlert(titre: "Warning", message: "Please type your credentials"), animated: true)
@@ -122,15 +124,10 @@ class SignInViewController: UIViewController {
     
     
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // let logindetails=UserDefaults.standard.value(forKey: "email")
-
-
-                    print("lfdgrghthyjyjrj")
 
                     emailField.text = UserDefaults.standard.value(forKey: "email") as? String
                     passwordField.text = UserDefaults.standard.value(forKey: "password") as? String

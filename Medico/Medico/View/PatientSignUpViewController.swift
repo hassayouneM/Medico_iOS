@@ -26,7 +26,11 @@ class PatientSignUpViewController: UIViewController {
     
     
     
-    @IBAction func signupBtn(_ sender: Any) {
+    @IBAction func signupBtn(_ sender: UIButton) {
+        
+        //ANIMATIONNN
+        sender.pulsate()
+        
         
         //EMPTY FIELD VERFICATION
         if (AssistantEmailField.text!.isEmpty) {
