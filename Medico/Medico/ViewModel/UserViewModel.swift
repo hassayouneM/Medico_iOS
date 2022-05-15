@@ -36,33 +36,96 @@ public class UserViewModel : ObservableObject{
             }
     }
     
-    func signup(user: User, completed: @escaping (Bool) -> Void) {
-        AF.request(HOST_URL + "users/register",
-                   method: .post,
-                   parameters: [
-                    
-                    "email": user.email!,
-                    "password": user.password!,
-                    "name": user.name!,
-                    "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
-                    "photo": user.photo!,
-                    "address":user.address!,
-                    "assistant_email":user.assistant_email!,
-                    "blood_type": user.blood_type!,
-                    "emergency_num" : user.emergency_num!,
-                    "is_assistant" : user.is_assistant!,
-                    "phone" : user.phone!
-                   ] ,encoding: JSONEncoding.default)
+    func signup(user: User,uiImage: UIImage, completed: @escaping (Bool) -> Void) {
+//        AF.request(HOST_URL + "users/register",
+//                   method: .post,
+//                   parameters: [
+//
+//                    "email": user.email!,
+//                    "password": user.password!,
+//                    "name": user.name!,
+//                    "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
+//                    "photo": user.photo!,
+//                    "address":user.address!,
+//                    "assistant_email":user.assistant_email!,
+//                    "blood_type": user.blood_type!,
+//                    "emergency_num" : user.emergency_num!,
+//                    "is_assistant" : user.is_assistant!,
+//                    "phone" : user.phone!
+//                   ] ,encoding: JSONEncoding.default)
+//            .validate(statusCode: 200..<300)
+//            .validate(contentType: ["application/json"])
+//            .responseData { response in
+//                switch response.result {
+//                case .success:
+//                    print("Validation Successful")
+//                    completed(true)
+//                case let .failure(error):
+//                    print(error)
+//                    completed(false)
+//                }
+//            }
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
+            print("11111111111111111111")
+            let ParametersS =
+                    [
+                        "email": user.email!,
+                        "password": user.password!,
+                        "name": user.name!,
+                        "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
+                        "photo": user.photo!,
+                        "address":user.address!,
+                        "assistant_email":user.assistant_email!,
+                        "blood_type": user.blood_type!,
+                        "emergency_num" : user.emergency_num!,
+                        "is_assistant" : user.is_assistant!,
+                        "phone" : user.phone!
+                    ] as [String : Any]
+                    for (key, value) in ParametersS {
+                        if let temp = value as? String {
+                            multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                        }
+                        if let temp = value as? Int {
+                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                        }
+                        if let temp = value as? Double {
+                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                        
+                        }
+            }
+            print("222222222222222")
+        },to: HOST_URL + "users/register",
+                  method: .post)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                    completed(true)
+                    switch response.result{
+                    case .success(let data):
+                        do {
+                            print("33333333333333333333")
+                            let json  = try JSONSerialization.jsonObject(with: data, options: [])
+                            print(json)
+                            if response.response?.statusCode == 201{
+                                let jsonData = JSON(response.data!)
+                           print("44444444444444")
+                                completed(true)
+
+                            }else{
+                                print("55555555555555")
+                                completed(false)
+                            }
+                            
+                        } catch  {
+                            print("66666666666666")
+                            print(error.localizedDescription)
+                            completed(false)
+                            
+                            
+                        }
                 case let .failure(error):
-                    print(error)
                     completed(false)
+                    print(error)
                 }
             }
     }
