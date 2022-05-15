@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		08FAB934282D7C3A0037C7C8 /* assistantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */; };
+		435EB4BF283126E3009543B5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4BE283126E3009543B5 /* ChatViewModel.swift */; };
+		435EB4C12831271D009543B5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C02831271D009543B5 /* Message.swift */; };
+		435EB4C328312738009543B5 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C228312738009543B5 /* Conversation.swift */; };
 		43A165E328305CE2009DE90F /* PatientSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A165E228305CE2009DE90F /* PatientSettingsViewController.swift */; };
 		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
 		43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB24228152E540029D35B /* NewPasswordViewController.swift */; };
@@ -46,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantProfileViewController.swift; sourceTree = "<group>"; };
+		435EB4BE283126E3009543B5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		435EB4C02831271D009543B5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		435EB4C228312738009543B5 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
 		43A165E228305CE2009DE90F /* PatientSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSettingsViewController.swift; sourceTree = "<group>"; };
 		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		43EAB24228152E540029D35B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,8 @@
 			children = (
 				88352ECE2806184C000E29BA /* User.swift */,
 				88352ED028061861000E29BA /* Medicine.swift */,
+				435EB4C02831271D009543B5 /* Message.swift */,
+				435EB4C228312738009543B5 /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			children = (
 				882E0FCE280F8BB20048F114 /* UserViewModel.swift */,
 				884FC43E282B35D3009F2175 /* MedicineViewModel.swift */,
+				435EB4BE283126E3009543B5 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -328,6 +337,7 @@
 				882E0FD6280F960F0048F114 /* Alert.swift in Sources */,
 				E4AE750A282EC38E00475E3E /* AssistantSettingsViewController.swift in Sources */,
 				884FC43F282B35D3009F2175 /* MedicineViewModel.swift in Sources */,
+				435EB4C12831271D009543B5 /* Message.swift in Sources */,
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
 				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
 				43A165E328305CE2009DE90F /* PatientSettingsViewController.swift in Sources */,
@@ -348,6 +358,8 @@
 				880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */,
 				5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */,
 				880388E02805D7DD00328D77 /* assistantChatViewController.swift in Sources */,
+				435EB4BF283126E3009543B5 /* ChatViewModel.swift in Sources */,
+				435EB4C328312738009543B5 /* Conversation.swift in Sources */,
 				880388DE2805D7CB00328D77 /* PatientChatViewController.swift in Sources */,
 				5B4E18D127FF8FE400495BDA /* HealthPatientViewController.swift in Sources */,
 				5B4E18D327FF900600495BDA /* ProfilePatientViewController.swift in Sources */,
