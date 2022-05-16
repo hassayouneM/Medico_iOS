@@ -35,9 +35,10 @@ class ProfilePatientViewController: UIViewController {
         super.viewDidLoad()
 
         initializePage()
-        self.viewDidAppear(true)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        initializePage()
+    }
 
     func initializePage() {
         

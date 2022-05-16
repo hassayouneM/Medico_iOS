@@ -7,30 +7,31 @@
 
 import UIKit
 
-class PatientSignUpViewController: UIViewController {
+class PatientSignUpViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     //var
     let bloodTypes = ["A+", "A-", "B+", "B-","O+","O-", "AB+","AB-"]
-    
+    var currentPhoto : UIImage?
+
     var user: User?
     
     //outlets
     
-    
+    @IBOutlet weak var addImageUser: UIButton!
     @IBOutlet weak var AssistantEmailField: UITextField!
     @IBOutlet weak var EmmergencyNumberField: UITextField!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     @IBOutlet weak var bloodPlicker: UIPickerView!
     @IBOutlet weak var AddressField: UITextField!
+    @IBOutlet weak var PhotoUser: UIImageView!
     //action
     
+    @IBAction func changephoto(_ sender: Any) {
+        showActionSheet()
+
+    }
     
-    
-    @IBAction func signupBtn(_ sender: UIButton) {
-        
-        //ANIMATIONNN
-        sender.pulsate()
-        
+    @IBAction func signupBtn(_ sender: Any) {
         
         //EMPTY FIELD VERFICATION
         if (AssistantEmailField.text!.isEmpty) {
@@ -48,7 +49,10 @@ class PatientSignUpViewController: UIViewController {
             self.present(Alert.makeAlert(titre: "Warning", message: "Please type your address"), animated: true)
             return
         }
-        
+        if (currentPhoto == nil){
+            self.present(Alert.makeAlert(titre: "Warning", message: "Choose a profile photo"), animated: true)
+            return
+        }
         //add photo
         self.user?.birthdate = birthDatePicker.date
         self.user?.address = AddressField.text
@@ -57,7 +61,7 @@ class PatientSignUpViewController: UIViewController {
         self.user?.emergency_num = Int(EmmergencyNumberField.text!)
         print(type(of: self.user?.emergency_num))
         
-        UserViewModel().signup(user: self.user!,  completed: { (success) in
+        UserViewModel().signup(user: self.user!, uiImage: currentPhoto!) { (success) in
             
             if success {
                 print("deee")
@@ -73,17 +77,9 @@ class PatientSignUpViewController: UIViewController {
 
                 self.present(Alert.makeAlert(titre: "Error", message: "Invalid information."), animated: true)
             }
-            
-        })
-        
+        }
     }
         
-        
-        
-        
-
-    
-    
     
     //function
     override func viewDidLoad() {
@@ -91,13 +87,69 @@ class PatientSignUpViewController: UIViewController {
 
         bloodPlicker.dataSource = self
         bloodPlicker.delegate = self
+    }
+   
+    func camera()
+    {
+        let myPickerControllerCamera = UIImagePickerController()
+        myPickerControllerCamera.delegate = self
+        myPickerControllerCamera.sourceType = UIImagePickerController.SourceType.camera
+        myPickerControllerCamera.allowsEditing = true
+        self.present(myPickerControllerCamera, animated: true, completion: nil)
+
+    }
+  
+  
+  func gallery()
+  {
+
+      let myPickerControllerGallery = UIImagePickerController()
+      myPickerControllerGallery.delegate = self
+      myPickerControllerGallery.sourceType = UIImagePickerController.SourceType.photoLibrary
+      myPickerControllerGallery.allowsEditing = true
+      self.present(myPickerControllerGallery, animated: true, completion: nil)
+
+  }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        // Do any additional setup after loading the view.
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            
+            return
+        }
+        
+        currentPhoto = selectedImage
+        PhotoUser.image = selectedImage
+//        addImageButton.isHidden = true
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let blood_type_selected = bloodTypes[row] as String
-//    }
+    func showActionSheet(){
+
+        let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString("Upload Image", comment: ""), message: nil, preferredStyle: .actionSheet)
+        actionSheetController.view.tintColor = UIColor.black
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+
+        let saveActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: .default)
+        { action -> Void in
+            self.camera()
+        }
+        actionSheetController.addAction(saveActionButton)
+
+        let deleteActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: ""), style: .default)
+        { action -> Void in
+            self.gallery()
+        }
+        
+        actionSheetController.addAction(deleteActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
 
 }
 extension PatientSignUpViewController : UIPickerViewDataSource{
