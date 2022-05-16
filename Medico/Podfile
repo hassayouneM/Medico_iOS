@@ -8,5 +8,4 @@ target 'Medico' do
   # Pods for Medico
 	pod 'Alamofire', '~> 5.4'
 	pod 'SwiftyJSON', '~> 4.0'
-	pod 'MessageKit'
 end

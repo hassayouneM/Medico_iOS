@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class SignInViewController: UIViewController {
-    
+
     //var
     let userViewModel = UserViewModel()
 
@@ -24,32 +24,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     
     
-    //Remember me stuffff
-    @IBAction func rememberMeAction(_ sender: Any) {
-        let alert = UIAlertController(title: "Saving", message: "Do You Want To Save Login Details", preferredStyle: .alert)
-
-                        let yesbutton = UIAlertAction(title: "Yes", style: .default){ (action) in
-
-                            UserDefaults.standard.set(self.emailField.text!, forKey: "email")
-
-                            UserDefaults.standard.set(self.passwordField.text!, forKey: "password")
-
-                        }
-
-                        let nobutton = UIAlertAction(title: "No", style: .default){ (action) in
-
-                            print("You Have Not Saved Login Details")
-
-                            UserDefaults.standard.removeObject(forKey: "email")
-
-                        }
-
-                        alert.addAction(yesbutton)
-
-                        alert.addAction(nobutton)
-
-                        present(alert, animated: true, completion: nil)
-    }
+    
     
     
     //Functions
@@ -82,9 +57,7 @@ class SignInViewController: UIViewController {
   
 
     
-    @IBAction func SignInBtn(_ sender: UIButton) {
-        
-        sender.shake()
+    @IBAction func SignInBtn(_ sender: Any) {
         
         if(emailField.text!.isEmpty || passwordField.text!.isEmpty){
             self.present(Alert.makeAlert(titre: "Warning", message: "Please type your credentials"), animated: true)
@@ -124,19 +97,12 @@ class SignInViewController: UIViewController {
     
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // let logindetails=UserDefaults.standard.value(forKey: "email")
-
-                    emailField.text = UserDefaults.standard.value(forKey: "email") as? String
-                    passwordField.text = UserDefaults.standard.value(forKey: "password") as? String
-
-                
-        
-        
-        //emailField.text = "mouna.hassayoune@gmail.com"
-        //passwordField.text = "mouna"
+        emailField.text = "mouna.hassayoune@gmail.com"
+        passwordField.text = "mouna"
 
     }
 
