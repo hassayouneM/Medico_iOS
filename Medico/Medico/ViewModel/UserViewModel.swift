@@ -67,7 +67,6 @@ public class UserViewModel : ObservableObject{
 //            }
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
-            print("11111111111111111111")
             let ParametersS =
                     [
                         "email": user.email!,
@@ -94,7 +93,6 @@ public class UserViewModel : ObservableObject{
                         
                         }
             }
-            print("222222222222222")
         },to: HOST_URL + "users/register",
                   method: .post)
             .validate(statusCode: 200..<300)
@@ -103,21 +101,17 @@ public class UserViewModel : ObservableObject{
                     switch response.result{
                     case .success(let data):
                         do {
-                            print("33333333333333333333")
                             let json  = try JSONSerialization.jsonObject(with: data, options: [])
                             print(json)
                             if response.response?.statusCode == 201{
                                 let jsonData = JSON(response.data!)
-                           print("44444444444444")
                                 completed(true)
 
                             }else{
-                                print("55555555555555")
                                 completed(false)
                             }
                             
                         } catch  {
-                            print("66666666666666")
                             print(error.localizedDescription)
                             completed(false)
                             
@@ -166,7 +160,7 @@ public class UserViewModel : ObservableObject{
                     is_assistant : jsonItem["is_assistant"].boolValue,
                     password: jsonItem["password"].stringValue,
                     phone : jsonItem["phone"].intValue,
-                    photo: jsonItem["idPhoto"].stringValue,
+                    photo: jsonItem["photo"].stringValue,
                     isVerified: jsonItem["isVerified"].boolValue,
                     medicines: medicines
                 )
