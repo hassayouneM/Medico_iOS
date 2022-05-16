@@ -36,35 +36,10 @@ public class UserViewModel : ObservableObject{
             }
     }
     
+
     func signup(user: User,uiImage: UIImage, completed: @escaping (Bool) -> Void) {
-//        AF.request(HOST_URL + "users/register",
-//                   method: .post,
-//                   parameters: [
-//
-//                    "email": user.email!,
-//                    "password": user.password!,
-//                    "name": user.name!,
-//                    "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
-//                    "photo": user.photo!,
-//                    "address":user.address!,
-//                    "assistant_email":user.assistant_email!,
-//                    "blood_type": user.blood_type!,
-//                    "emergency_num" : user.emergency_num!,
-//                    "is_assistant" : user.is_assistant!,
-//                    "phone" : user.phone!
-//                   ] ,encoding: JSONEncoding.default)
-//            .validate(statusCode: 200..<300)
-//            .validate(contentType: ["application/json"])
-//            .responseData { response in
-//                switch response.result {
-//                case .success:
-//                    print("Validation Successful")
-//                    completed(true)
-//                case let .failure(error):
-//                    print(error)
-//                    completed(false)
-//                }
-//            }
+       "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
+
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
             let ParametersS =
@@ -117,9 +92,10 @@ public class UserViewModel : ObservableObject{
                             
                             
                         }
+
                 case let .failure(error):
-                    completed(false)
                     print(error)
+                    completed(false)
                 }
             }
     }
@@ -345,7 +321,54 @@ public class UserViewModel : ObservableObject{
                 }
         }
     
+    //
+    // something added for chat
+    func recupererToutUtilisateur( completed: @escaping (Bool, [User]?) -> Void ) {
+
+        AF.request(HOST_URL + "users/getusers",
+
+
+                       method: .get)
+
+                .validate(statusCode: 200..<300)
+
+                .validate(contentType: ["application/json"])
+
+                .responseData { response in
+
+                    switch response.result {
+
+                    case .success:
+
+                        var utilisateurs : [User]? = []
+
+                        for singleJsonItem in JSON(response.data!)["users"] {
+                            utilisateurs!.append(self.makeItem(jsonItem: singleJsonItem.1))
+
+                        }
+
+                        completed(true, utilisateurs)
+
+                    case let .failure(error):
+
+                        debugPrint(error)
+
+                        completed(false, nil)
+
+                    }
+
+                }
+
+        }
+    
+    
 }
+
+
+
+
+
+
 //func getAssistantName (assistant_email: String , methode : HTTPMethod, completed: @escaping(Bool)->Void){
 //    AF.request(HOST_URL + "users/getAssistantName",
 //               method: methode,
