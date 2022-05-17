@@ -36,16 +36,7 @@ class AssistantSettingsViewController: UIViewController {
     
     @IBAction func logOutBtn(_ sender: Any) {
         //UserDefaults.standard.set("", forKey: "tokenConnexion")
-        performSegue(withIdentifier: "logoutsegue", sender: sender)
-        print("logouttttt")
-        //UserDefaults.standard.removeObject(forKey: "email")
-        //UserDefaults.standard.removeObject(forKey: "password")
-
-        print("logout22222")
-        UserDefaults.standard.set("", forKey: "email")
-        UserDefaults.standard.set("", forKey: "password")
-
-
+               performSegue(withIdentifier: "logoutsegue", sender: nil)
     }
     //functions
     override func viewDidLoad() {

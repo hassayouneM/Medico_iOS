@@ -17,7 +17,8 @@ class DefaultSignUpViewController: UIViewController {
     var phone_number: Int?
     var userViewModel = UserViewModel()
     var user = User()
-    
+    var currentPhoto : UIImage?
+
     
     
     //Outlets
@@ -32,9 +33,7 @@ class DefaultSignUpViewController: UIViewController {
     
     
     //action
-    @IBAction func nextbtn(_ sender: UIButton) {
-        
-        sender.flash()
+    @IBAction func nextbtn(_ sender: Any) {
         
         //Empty Fields Verfication
         if (nameField.text == "") {
@@ -92,7 +91,7 @@ class DefaultSignUpViewController: UIViewController {
         
         if isAssistantSwitch.isOn {
             
-            UserViewModel().signup(user: user,  completed: { (success) in
+            UserViewModel().signup(user: user, uiImage: currentPhoto!,  completed: { (success) in
                 
                 if success {
                     
