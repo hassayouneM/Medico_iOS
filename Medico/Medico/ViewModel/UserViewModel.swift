@@ -36,33 +36,90 @@ public class UserViewModel : ObservableObject{
             }
     }
     
-    func signup(user: User, completed: @escaping (Bool) -> Void) {
-        AF.request(HOST_URL + "users/register",
-                   method: .post,
-                   parameters: [
-                    
-                    "email": user.email!,
-                    "password": user.password!,
-                    "name": user.name!,
-                    "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
-                    "photo": user.photo!,
-                    "address":user.address!,
-                    "assistant_email":user.assistant_email!,
-                    "blood_type": user.blood_type!,
-                    "emergency_num" : user.emergency_num!,
-                    "is_assistant" : user.is_assistant!,
-                    "phone" : user.phone!
-                   ] ,encoding: JSONEncoding.default)
+    func signup(user: User,uiImage: UIImage, completed: @escaping (Bool) -> Void) {
+//        AF.request(HOST_URL + "users/register",
+//                   method: .post,
+//                   parameters: [
+//
+//                    "email": user.email!,
+//                    "password": user.password!,
+//                    "name": user.name!,
+//                    "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
+//                    "photo": user.photo!,
+//                    "address":user.address!,
+//                    "assistant_email":user.assistant_email!,
+//                    "blood_type": user.blood_type!,
+//                    "emergency_num" : user.emergency_num!,
+//                    "is_assistant" : user.is_assistant!,
+//                    "phone" : user.phone!
+//                   ] ,encoding: JSONEncoding.default)
+//            .validate(statusCode: 200..<300)
+//            .validate(contentType: ["application/json"])
+//            .responseData { response in
+//                switch response.result {
+//                case .success:
+//                    print("Validation Successful")
+//                    completed(true)
+//                case let .failure(error):
+//                    print(error)
+//                    completed(false)
+//                }
+//            }
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
+            let ParametersS =
+                    [
+                        "email": user.email!,
+                        "password": user.password!,
+                        "name": user.name!,
+                        "birthdate": DateUtils.formatFromDate(date: user.birthdate!) ,
+                        "photo": user.photo!,
+                        "address":user.address!,
+                        "assistant_email":user.assistant_email!,
+                        "blood_type": user.blood_type!,
+                        "emergency_num" : user.emergency_num!,
+                        "is_assistant" : user.is_assistant!,
+                        "phone" : user.phone!
+                    ] as [String : Any]
+                    for (key, value) in ParametersS {
+                        if let temp = value as? String {
+                            multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                        }
+                        if let temp = value as? Int {
+                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                        }
+                        if let temp = value as? Double {
+                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                        
+                        }
+            }
+        },to: HOST_URL + "users/register",
+                  method: .post)
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
-                switch response.result {
-                case .success:
-                    print("Validation Successful")
-                    completed(true)
+                    switch response.result{
+                    case .success(let data):
+                        do {
+                            let json  = try JSONSerialization.jsonObject(with: data, options: [])
+                            print(json)
+                            if response.response?.statusCode == 201{
+                                let jsonData = JSON(response.data!)
+                                completed(true)
+
+                            }else{
+                                completed(false)
+                            }
+                            
+                        } catch  {
+                            print(error.localizedDescription)
+                            completed(false)
+                            
+                            
+                        }
                 case let .failure(error):
-                    print(error)
                     completed(false)
+                    print(error)
                 }
             }
     }
@@ -103,7 +160,7 @@ public class UserViewModel : ObservableObject{
                     is_assistant : jsonItem["is_assistant"].boolValue,
                     password: jsonItem["password"].stringValue,
                     phone : jsonItem["phone"].intValue,
-                    photo: jsonItem["idPhoto"].stringValue,
+                    photo: jsonItem["photo"].stringValue,
                     isVerified: jsonItem["isVerified"].boolValue,
                     medicines: medicines
                 )
@@ -268,11 +325,12 @@ public class UserViewModel : ObservableObject{
             }
     }
     
-    func updateProfile (user: User, methode: HTTPMethod, completed: @escaping (Bool) -> Void) {
+    func updateProfile (user: User,uiImage: UIImage,  completed: @escaping (Bool) -> Void) {
             print(user)
-            AF.request(HOST_URL + "users/updateProfile",
-                       method: methode,
-                       parameters: [
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
+            let ParametersS =
+            [
                         "blood_type" : user.blood_type!,
                         "emergency_num": user.emergency_num!,
                         "email": user.email!,
@@ -280,62 +338,51 @@ public class UserViewModel : ObservableObject{
                         "name": user.name!,
                         "assistant_email": user.assistant_email!,
                         "birthdate": DateUtils.formatFromDate(date: user.birthdate!),
-                        //"photo": utilisateur.photo!,
+                        "photo": user.photo!,
                     
-                       ])
-                .response { response in
-                    print(response)
+                       ]as [String : Any]
+            for (key, value) in ParametersS {
+                if let temp = value as? String {
+                    multipartFormData.append(temp.data(using: .utf8)!, withName: key)
+                }
+                if let temp = value as? Int {
+                    multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                }
+                if let temp = value as? Double {
+                    multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
+                }
                 }
         }
-    
-    //
-    // something added for chat
-    func recupererToutUtilisateur( completed: @escaping (Bool, [User]?) -> Void ) {
+                ,to: HOST_URL + "users/updateProfile",
+                          method: .put)
+                    .validate(statusCode: 200..<300)
+                    .validate(contentType: ["application/json"])
+                    .responseData { response in
+                            switch response.result{
+                            case .success(let data):
+                                do {
+                                    let json  = try JSONSerialization.jsonObject(with: data, options: [])
+                                    print(json)
+                                    if response.response?.statusCode == 201{
+                                        let jsonData = JSON(response.data!)
+                                        completed(true)
 
-        AF.request(HOST_URL + "users/getusers",
-
-
-                       method: .get)
-
-                .validate(statusCode: 200..<300)
-
-                .validate(contentType: ["application/json"])
-
-                .responseData { response in
-
-                    switch response.result {
-
-                    case .success:
-
-                        var utilisateurs : [User]? = []
-
-                        for singleJsonItem in JSON(response.data!)["users"] {
-                            utilisateurs!.append(self.makeItem(jsonItem: singleJsonItem.1))
-
+                                    }else{
+                                        completed(false)
+                                    }
+                                    
+                                } catch  {
+                                    print(error.localizedDescription)
+                                    completed(false)
+                                    
+                                    
+                                }
+                        case let .failure(error):
+                            completed(false)
+                            print(error)
                         }
-
-                        completed(true, utilisateurs)
-
-                    case let .failure(error):
-
-                        debugPrint(error)
-
-                        completed(false, nil)
-
                     }
-
-                }
-
-        }
-    
-    
 }
-
-
-
-
-
-
 //func getAssistantName (assistant_email: String , methode : HTTPMethod, completed: @escaping(Bool)->Void){
 //    AF.request(HOST_URL + "users/getAssistantName",
 //               method: methode,
@@ -347,3 +394,4 @@ public class UserViewModel : ObservableObject{
 //        }
 //}
 //}
+}

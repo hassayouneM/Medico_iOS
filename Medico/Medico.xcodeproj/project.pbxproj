@@ -8,15 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		08FAB934282D7C3A0037C7C8 /* assistantProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */; };
-		136792F5283337A7008767DF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136792F4283337A7008767DF /* LocationViewController.swift */; };
-		435EB4BF283126E3009543B5 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4BE283126E3009543B5 /* ChatViewModel.swift */; };
-		435EB4C12831271D009543B5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C02831271D009543B5 /* Message.swift */; };
-		435EB4C328312738009543B5 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C228312738009543B5 /* Conversation.swift */; };
-		435EB4C528315066009543B5 /* ModalTransitionListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C428315066009543B5 /* ModalTransitionListener.swift */; };
-		435EB4C72831513C009543B5 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C62831513C009543B5 /* ChatView.swift */; };
-		435EB4C928315175009543B5 /* ChoisirUtilisateurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4C828315175009543B5 /* ChoisirUtilisateurView.swift */; };
-		435EB4CB2831519B009543B5 /* MessagerieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4CA2831519B009543B5 /* MessagerieView.swift */; };
-		435EB4CD28316F82009543B5 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435EB4CC28316F82009543B5 /* ButtonExtensions.swift */; };
 		43A165E328305CE2009DE90F /* PatientSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A165E228305CE2009DE90F /* PatientSettingsViewController.swift */; };
 		43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB2402815223A0029D35B /* LoadingScreen.swift */; };
 		43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EAB24228152E540029D35B /* NewPasswordViewController.swift */; };
@@ -30,6 +21,7 @@
 		5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */; };
 		5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */; };
 		880388DE2805D7CB00328D77 /* PatientChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388DD2805D7CB00328D77 /* PatientChatViewController.swift */; };
+		880388E02805D7DD00328D77 /* assistantChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388DF2805D7DD00328D77 /* assistantChatViewController.swift */; };
 		880388E22805D82200328D77 /* ForgetPassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E12805D82200328D77 /* ForgetPassViewController.swift */; };
 		880388E42805D84D00328D77 /* ForgetPassVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */; };
 		880388E62805E49D00328D77 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880388E52805E49D00328D77 /* EditProfileViewController.swift */; };
@@ -54,15 +46,6 @@
 
 /* Begin PBXFileReference section */
 		08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantProfileViewController.swift; sourceTree = "<group>"; };
-		136792F4283337A7008767DF /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
-		435EB4BE283126E3009543B5 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
-		435EB4C02831271D009543B5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		435EB4C228312738009543B5 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
-		435EB4C428315066009543B5 /* ModalTransitionListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionListener.swift; sourceTree = "<group>"; };
-		435EB4C62831513C009543B5 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		435EB4C828315175009543B5 /* ChoisirUtilisateurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoisirUtilisateurView.swift; sourceTree = "<group>"; };
-		435EB4CA2831519B009543B5 /* MessagerieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagerieView.swift; sourceTree = "<group>"; };
-		435EB4CC28316F82009543B5 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
 		43A165E228305CE2009DE90F /* PatientSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSettingsViewController.swift; sourceTree = "<group>"; };
 		43EAB2402815223A0029D35B /* LoadingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreen.swift; sourceTree = "<group>"; };
 		43EAB24228152E540029D35B /* NewPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +60,7 @@
 		5BD5555427FF3CEA00C005D2 /* DefaultSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSignUpViewController.swift; sourceTree = "<group>"; };
 		5BD5555627FF3D0000C005D2 /* PatientSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSignUpViewController.swift; sourceTree = "<group>"; };
 		880388DD2805D7CB00328D77 /* PatientChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientChatViewController.swift; sourceTree = "<group>"; };
+		880388DF2805D7DD00328D77 /* assistantChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = assistantChatViewController.swift; sourceTree = "<group>"; };
 		880388E12805D82200328D77 /* ForgetPassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassViewController.swift; sourceTree = "<group>"; };
 		880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPassVerificationViewController.swift; sourceTree = "<group>"; };
 		880388E52805E49D00328D77 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -127,8 +111,6 @@
 			children = (
 				88352ECE2806184C000E29BA /* User.swift */,
 				88352ED028061861000E29BA /* Medicine.swift */,
-				435EB4C02831271D009543B5 /* Message.swift */,
-				435EB4C228312738009543B5 /* Conversation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +129,7 @@
 				5B4E18D227FF900600495BDA /* ProfilePatientViewController.swift */,
 				5B2CDA8028001757009F95F5 /* AddMedicationViewController.swift */,
 				880388DD2805D7CB00328D77 /* PatientChatViewController.swift */,
+				880388DF2805D7DD00328D77 /* assistantChatViewController.swift */,
 				880388E12805D82200328D77 /* ForgetPassViewController.swift */,
 				880388E32805D84D00328D77 /* ForgetPassVerificationViewController.swift */,
 				880388E52805E49D00328D77 /* EditProfileViewController.swift */,
@@ -155,10 +138,6 @@
 				08FAB933282D7C3A0037C7C8 /* assistantProfileViewController.swift */,
 				E4AE7509282EC38E00475E3E /* AssistantSettingsViewController.swift */,
 				43A165E228305CE2009DE90F /* PatientSettingsViewController.swift */,
-				435EB4C62831513C009543B5 /* ChatView.swift */,
-				435EB4C828315175009543B5 /* ChoisirUtilisateurView.swift */,
-				435EB4CA2831519B009543B5 /* MessagerieView.swift */,
-				136792F4283337A7008767DF /* LocationViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,7 +183,6 @@
 			children = (
 				882E0FCE280F8BB20048F114 /* UserViewModel.swift */,
 				884FC43E282B35D3009F2175 /* MedicineViewModel.swift */,
-				435EB4BE283126E3009543B5 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -216,8 +194,6 @@
 				882E0FD3280F90B30048F114 /* DateUtils.swift */,
 				882E0FD5280F960F0048F114 /* Alert.swift */,
 				43EAB2402815223A0029D35B /* LoadingScreen.swift */,
-				435EB4C428315066009543B5 /* ModalTransitionListener.swift */,
-				435EB4CC28316F82009543B5 /* ButtonExtensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -349,14 +325,11 @@
 				5BD5555527FF3CEA00C005D2 /* DefaultSignUpViewController.swift in Sources */,
 				882E0FD4280F90B30048F114 /* DateUtils.swift in Sources */,
 				882E0FCF280F8BB20048F114 /* UserViewModel.swift in Sources */,
-				435EB4C72831513C009543B5 /* ChatView.swift in Sources */,
 				882E0FD6280F960F0048F114 /* Alert.swift in Sources */,
 				E4AE750A282EC38E00475E3E /* AssistantSettingsViewController.swift in Sources */,
 				884FC43F282B35D3009F2175 /* MedicineViewModel.swift in Sources */,
-				435EB4C12831271D009543B5 /* Message.swift in Sources */,
 				880BB7E427F46A46005C3E20 /* Medico.xcdatamodeld in Sources */,
 				5B6E8FB027FF3FD000A5C20B /* HomeAssistantViewController.swift in Sources */,
-				435EB4CB2831519B009543B5 /* MessagerieView.swift in Sources */,
 				43A165E328305CE2009DE90F /* PatientSettingsViewController.swift in Sources */,
 				43EAB2412815223A0029D35B /* LoadingScreen.swift in Sources */,
 				5BD5555727FF3D0000C005D2 /* PatientSignUpViewController.swift in Sources */,
@@ -369,17 +342,12 @@
 				88352ED128061861000E29BA /* Medicine.swift in Sources */,
 				880BB7DE27F46A46005C3E20 /* SignInViewController.swift in Sources */,
 				880388E62805E49D00328D77 /* EditProfileViewController.swift in Sources */,
-				435EB4C928315175009543B5 /* ChoisirUtilisateurView.swift in Sources */,
 				5B6E8FAE27FF3FC200A5C20B /* HomePatientViewController.swift in Sources */,
 				43EAB24328152E540029D35B /* NewPasswordViewController.swift in Sources */,
 				880388E42805D84D00328D77 /* ForgetPassVerificationViewController.swift in Sources */,
-				435EB4CD28316F82009543B5 /* ButtonExtensions.swift in Sources */,
-				435EB4C528315066009543B5 /* ModalTransitionListener.swift in Sources */,
 				880BB7DA27F46A46005C3E20 /* AppDelegate.swift in Sources */,
 				5B2CDA8128001757009F95F5 /* AddMedicationViewController.swift in Sources */,
-				435EB4BF283126E3009543B5 /* ChatViewModel.swift in Sources */,
-				435EB4C328312738009543B5 /* Conversation.swift in Sources */,
-				136792F5283337A7008767DF /* LocationViewController.swift in Sources */,
+				880388E02805D7DD00328D77 /* assistantChatViewController.swift in Sources */,
 				880388DE2805D7CB00328D77 /* PatientChatViewController.swift in Sources */,
 				5B4E18D127FF8FE400495BDA /* HealthPatientViewController.swift in Sources */,
 				5B4E18D327FF900600495BDA /* ProfilePatientViewController.swift in Sources */,
@@ -537,8 +505,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Medico/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Medico;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -568,8 +534,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Medico/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Medico;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

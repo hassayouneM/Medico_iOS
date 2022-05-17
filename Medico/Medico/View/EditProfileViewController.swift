@@ -7,17 +7,20 @@
 
 import UIKit
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     //var
     let bloodTypes = ["A+", "A-", "B+", "B-","O+","O-", "AB+","AB-"]
-    
+    var currentPhoto : UIImage?
+
     var bloodIndex : Int?
     var user : User?
     
     //outlets
+    @IBOutlet weak var UserPhoto: UIImageView!
     @IBOutlet weak var assistantEmailField: UITextField!
     
+    @IBOutlet weak var changePhoto: UIButton!
     @IBOutlet weak var em_numField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -26,6 +29,9 @@ class EditProfileViewController: UIViewController {
     
     //actions
     
+    @IBAction func changePhoto(_ sender: Any) {
+        showActionSheet()
+    }
     @IBAction func confirmBtn(_ sender: Any) {
         
         print("Edited profile")
@@ -49,11 +55,7 @@ class EditProfileViewController: UIViewController {
             self.present(Alert.makeAlert(titre: "Error", message: "Please choose your assistant's address"), animated: true)
             return
         }
-        
-    //    viewDidAppear(<#T##animated: Bool##Bool#>)
-      //  diddis
-        
-        //user?.idPhoto = ""
+
         
         user?.name = nameField.text
         user?.assistant_email = assistantEmailField.text
@@ -61,8 +63,8 @@ class EditProfileViewController: UIViewController {
         user?.emergency_num = Int(em_numField.text!)
         user?.blood_type = bloodTypes[Int(bloodPicker.selectedRow(inComponent: 0))]
         user?.birthdate = datePicker.date
-        
-        UserViewModel().updateProfile(user: user!, methode: .put, completed:{
+        currentPhoto = UserPhoto.image
+        UserViewModel().updateProfile(user: user!, uiImage: currentPhoto!, completed:{
             (success) in
             print (success)
             if success {
@@ -84,16 +86,84 @@ class EditProfileViewController: UIViewController {
         bloodPicker.dataSource = self
         bloodPicker.delegate = self
     }
+
+    func camera()
+    {
+        let myPickerControllerCamera = UIImagePickerController()
+        myPickerControllerCamera.delegate = self
+        myPickerControllerCamera.sourceType = UIImagePickerController.SourceType.camera
+        myPickerControllerCamera.allowsEditing = true
+        self.present(myPickerControllerCamera, animated: true, completion: nil)
+
+    }
+  
+  
+  func gallery()
+  {
+
+      let myPickerControllerGallery = UIImagePickerController()
+      myPickerControllerGallery.delegate = self
+      myPickerControllerGallery.sourceType = UIImagePickerController.SourceType.photoLibrary
+      myPickerControllerGallery.allowsEditing = true
+      self.present(myPickerControllerGallery, animated: true, completion: nil)
+
+  }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            
+            return
+        }
+        
+        currentPhoto = selectedImage
+        UserPhoto.image = selectedImage
+//        addImageButton.isHidden = true
+        
+        
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func showActionSheet(){
+
+        print("oooooooooooo")
+        let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString("Upload Image", comment: ""), message: nil, preferredStyle: .actionSheet)
+        actionSheetController.view.tintColor = UIColor.black
+        let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+
+        let saveActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: .default)
+        { action -> Void in
+            self.camera()
+        }
+        actionSheetController.addAction(saveActionButton)
+
+        let deleteActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: ""), style: .default)
+        { action -> Void in
+            self.gallery()
+        }
+        
+        actionSheetController.addAction(deleteActionButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
     func initializePage() {
-          
+        UserPhoto.layer.borderWidth = 1
+        UserPhoto.layer.masksToBounds = true
+        UserPhoto.layer.borderColor = UIColor(red:18/255, green:19/255, blue:38/255, alpha: 1).cgColor
+        UserPhoto.layer.cornerRadius = UserPhoto.frame.height/2
+        UserPhoto.clipsToBounds = true;
+
             UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
                 [self] success, result in self.user = result
                 
                         print("patient : ------------")
                         print(UserDefaults.standard.string(forKey: "id"))
                 print(user)
-            
+                let url = URL(string : HOST_POST_URL+"/uploads/"+(user?.photo)!)
+                UserPhoto.loadImge(withUrl: url!)
                 nameField.text = user?.name
                 assistantEmailField.text = user?.assistant_email!
                 addressField.text = user?.address!

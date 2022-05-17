@@ -35,11 +35,20 @@ class ProfilePatientViewController: UIViewController {
         super.viewDidLoad()
 
         initializePage()
-        self.viewDidAppear(true)
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        initializePage()
+    }
 
     func initializePage() {
+        
+        
+        ImageView.layer.borderWidth = 1
+        ImageView.layer.masksToBounds = true
+        ImageView.layer.borderColor = UIColor(red:18/255, green:19/255, blue:38/255, alpha: 1).cgColor
+        ImageView.layer.cornerRadius = ImageView.frame.height/2
+        ImageView.clipsToBounds = true;
+        
         
         
         UserViewModel().getUserById(id: UserDefaults.standard.string(forKey: "id")!) {
@@ -55,7 +64,14 @@ class ProfilePatientViewController: UIViewController {
             print(type(of: Birthdate))
             ageLabel.text = String(Calendar.current.dateComponents([.year], from: Birthdate!, to: Date()).year!)
             print(age)
+            print("-------àààààààààààààà")
+            print(result?.photo)
             
+            
+            let url = URL(string : HOST_POST_URL+"/uploads/"+(result?.photo)!)
+            //ImageView.loadImage(withurl :url)
+            ImageView.loadImge(withUrl: url!)
+
             email = (result?.assistant_email)!
             print(email)
             
@@ -74,4 +90,17 @@ class ProfilePatientViewController: UIViewController {
         
     }
    
+}
+extension UIImageView {
+    func loadImge(withUrl url: URL) {
+           DispatchQueue.global().async { [weak self] in
+               if let imageData = try? Data(contentsOf: url) {
+                   if let image = UIImage(data: imageData) {
+                       DispatchQueue.main.async {
+                           self?.image = image
+                       }
+                   }
+               }
+           }
+       }
 }
