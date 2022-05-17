@@ -65,10 +65,11 @@ class ProfilePatientViewController: UIViewController {
             ageLabel.text = String(Calendar.current.dateComponents([.year], from: Birthdate!, to: Date()).year!)
             print(age)
             print("-------àààààààààààààà")
-            print(result?.photo)
+            print((result?.photo)!)
             
             
             let url = URL(string : HOST_POST_URL+"/uploads/"+(result?.photo)!)
+            print(url)
             //ImageView.loadImage(withurl :url)
             ImageView.loadImge(withUrl: url!)
 

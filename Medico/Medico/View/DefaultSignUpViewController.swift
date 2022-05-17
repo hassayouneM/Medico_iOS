@@ -17,8 +17,7 @@ class DefaultSignUpViewController: UIViewController {
     var phone_number: Int?
     var userViewModel = UserViewModel()
     var user = User()
-    var currentPhoto : UIImage?
-
+    
     
     
     //Outlets
@@ -31,9 +30,12 @@ class DefaultSignUpViewController: UIViewController {
     @IBOutlet weak var PhoneNumberField: UITextField!
     
     
+    @IBOutlet weak var logo: UIImageView!
     
     //action
-    @IBAction func nextbtn(_ sender: Any) {
+    @IBAction func nextbtn(_ sender: UIButton) {
+        
+        sender.flash()
         
         //Empty Fields Verfication
         if (nameField.text == "") {
@@ -81,6 +83,7 @@ class DefaultSignUpViewController: UIViewController {
         user.phone = Int(PhoneNumberField.text!)
         //print(type(of: user.phone))
         user.is_assistant = isAssistantSwitch.isOn
+        print(user.is_assistant)
         user.birthdate = Date.now
         user.photo = ""
         user.address = ""
@@ -88,10 +91,9 @@ class DefaultSignUpViewController: UIViewController {
         user.blood_type = ""
         user.emergency_num = 0
         //user.medicines = []
-        
         if isAssistantSwitch.isOn {
             
-            UserViewModel().signup(user: user, uiImage: currentPhoto!,  completed: { (success) in
+            UserViewModel().signup(user: user, uiImage: logo.image!,  completed: { (success) in
                 
                 if success {
                     

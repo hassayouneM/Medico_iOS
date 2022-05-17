@@ -27,7 +27,7 @@ class MessagerieView: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         let contentView = cell?.contentView
 
-        // let imageProfile = contentView?.viewWithTag(1) as! UIImageView
+        let imageProfile = contentView?.viewWithTag(1) as! UIImageView
         let labelUsername = contentView?.viewWithTag(2) as! UILabel
         let labellastMessage = contentView?.viewWithTag(3) as! UILabel
         
@@ -35,15 +35,16 @@ class MessagerieView: UIViewController, UITableViewDataSource, UITableViewDelega
         let recepteur = conversation.recepteur
     
         //imageProfile.roundedGrayPhoto()
-        
-/*        if (recepteur.idPhoto! != ""){
-            ImageLoader.shared.loadImage(
-                identifier: recepteur.idPhoto!,
-                url: IMAGE_URL + recepteur.idPhoto!,
-                completion: { [] image in
-                    imageProfile.image = image
-                })
-        }*/
+        let url = URL(string : HOST_POST_URL+"/uploads/"+recepteur.photo!)
+        imageProfile.loadImge(withUrl: url!)
+//        if (recepteur.photo! != ""){
+//            ImageLoader.shared.loadImage(
+//                identifier: recepteur.photo!,
+//                url: IMAGE_URL + recepteur.photo!,
+//                completion: { [] image in
+//                    imageProfile.image = image
+//                })
+//        }
         
         
         labelUsername.text = recepteur.name!

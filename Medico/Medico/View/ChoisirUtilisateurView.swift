@@ -31,6 +31,9 @@ class ChoisirUtilisateurView: UIViewController, UITableViewDataSource, UITableVi
         
         let utilisateur = utilisateurs[indexPath.row]
         
+        let url = URL(string : HOST_POST_URL+"/uploads/"+utilisateur.photo!)
+        imageProfile.loadImge(withUrl: url!)
+        
         labelName.text = utilisateur.name!
     
         

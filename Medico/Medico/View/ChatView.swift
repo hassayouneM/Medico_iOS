@@ -44,6 +44,7 @@ class ChatView: MessagesViewController, MessagesDataSource, MessagesLayoutDelega
                     var message = messageFromRep!
                     
                     message.sender = Sender(senderId: currentUser._id!, displayName: currentUser.name!)
+                    
                     messages.append(message)
                     messagesCollectionView.reloadData()
                 } else {

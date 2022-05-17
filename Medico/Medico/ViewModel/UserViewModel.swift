@@ -67,6 +67,8 @@ public class UserViewModel : ObservableObject{
 //            }
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
+            print("------------")
+            print(user.is_assistant)
             let ParametersS =
                     [
                         "email": user.email!,
@@ -180,7 +182,7 @@ public class UserViewModel : ObservableObject{
                         //array reading
                         
                         let user = self.makeItem(jsonItem: jsonData["user"])
-                        print("Found user --------------------")
+                        print("Found user --------------------1111111")
                         print(user)
                         print("-------------------------------")
                        

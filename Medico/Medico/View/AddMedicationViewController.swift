@@ -63,7 +63,7 @@ class AddMedicationViewController: UIViewController,UIImagePickerControllerDeleg
         MedicineViewModel().addMedicine(id: UserDefaults.standard.string(forKey: "patientId")!, med: self.med,uiImage: currentPhoto!) { (success) in
                 if success {
                     let alert = UIAlertController(title: "Success", message: "med has been created.", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default) 
+                    let action = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(action)
                     self.present(alert, animated: true)
 
