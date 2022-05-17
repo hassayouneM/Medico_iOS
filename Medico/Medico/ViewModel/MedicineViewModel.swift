@@ -14,50 +14,20 @@ public class MedicineViewModel : ObservableObject{
     
 
 
-    func addMedicine(id : String, med : Medicine,uiImage: UIImage, completed: @escaping (Bool)-> Void){
-//                AF.request(
-//            HOST_URL + "users/addMedicine",
-//                method: .post,
-//                parameters: [
-//                    "id": id,
-//                    "name": med.name!,
-//                    "category": med.category!,
-//                    "notif_time": DateUtils.formatFromDate(date: med.notif_time!) ,
-//                    "quantity": med.quantity!,
-//                    "until": DateUtils.formatFromDate(date: med.until!) ,
-//                    "borA": med.borA!
-//                ],encoding: JSONEncoding.default
-//        )
-        
-        AF.upload(multipartFormData: { multipartFormData in
-            multipartFormData.append(uiImage.jpegData(compressionQuality: 0.5)!, withName: "image" , fileName: "image.jpeg", mimeType: "image/jpeg")
-            let ParametersS =
-                    [
-                        "id": id,
-                        "name": med.name!,
-                        "category": med.category!,
-                        "notif_time": DateUtils.formatFromDate(date: med.notif_time!) ,
-                        "quantity": med.quantity!,
-                        "until": DateUtils.formatFromDate(date: med.until!) ,
-                        "borA": med.borA!,
-                        "photo": med.photo!,
-                    ] as [String : Any]
-                    for (key, value) in ParametersS {
-                        if let temp = value as? String {
-                            multipartFormData.append(temp.data(using: .utf8)!, withName: key)
-                        }
-                        if let temp = value as? Int {
-                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
-                        }
-                        if let temp = value as? Double {
-                            multipartFormData.append("\(temp)".data(using: .utf8)!, withName: key)
-                        
-                        }
-            }
-        },to: HOST_URL + "users/addMedicine",
-                  method: .post)
-        
-        
+    func addMedicine(id : String, med : Medicine, completed: @escaping (Bool)-> Void){
+        AF.request(
+            HOST_URL + "users/addMedicine",
+                method: .post,
+                parameters: [
+                    "id": id,
+                    "name": med.name!,
+                    "category": med.category!,
+                    "notif_time": DateUtils.formatFromDate(date: med.notif_time!) ,
+                    "quantity": med.quantity!,
+                    "until": DateUtils.formatFromDate(date: med.until!) ,
+                    "borA": med.borA!
+                ],encoding: JSONEncoding.default
+        )
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
@@ -83,7 +53,6 @@ public class MedicineViewModel : ObservableObject{
                         "quantity": med.quantity!,
                         "borA": med.borA!,
                         "until": DateUtils.formatFromDate(date: med.until!)
-                        
                         //"photo": utilisateur.photo!,
                     
                        ])
@@ -93,15 +62,13 @@ public class MedicineViewModel : ObservableObject{
         }
     
     func deleteMedicine(pId : String, mId : String, completed: @escaping(Bool) -> Void) {
-        print("oooooooooooooooo")
         AF.request(
-            
             HOST_URL + "users/deleteMedicine",
                 method: .post,
                 parameters: [
                     "id": pId,
                     "_id": mId
-                ]
+                ],encoding: JSONEncoding.default
         )
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])

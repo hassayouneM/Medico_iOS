@@ -26,12 +26,12 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     //actions
     
-//    @IBAction func logoutBtn(_ sender: Any) {
-//    }
-//    var i = 1
-//    @IBAction func DarkmodeBtn(_ sender: Any) {
-//
-//    }
+    @IBAction func logoutBtn(_ sender: Any) {
+    }
+    var i = 1
+    @IBAction func DarkmodeBtn(_ sender: Any) {
+        
+    }
     //functions
     
     
@@ -45,12 +45,6 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
         
         searchBar.delegate = self
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        initializePage()
-        
-        
-        searchBar.delegate = self
     }
     func initializePage() {
         
@@ -76,18 +70,8 @@ class HomeAssistantViewController: UIViewController, UITableViewDelegate, UITabl
         let PLCell = tableView.dequeueReusableCell(withIdentifier: "PLCell")!
         
         let cv = PLCell.contentView
-        let MedImg = cv.viewWithTag(1) as! UIImageView
+       // let MedImg = cv.viewWithTag(1) as! UIImageView
         let name = cv.viewWithTag(2) as! UILabel
-        
-        
-        print(filteredPatients[indexPath.row].photo)
-        
-        
-        
-        let url = URL(string : HOST_POST_URL+"/uploads/"+filteredPatients[indexPath.row].photo!)
-        //ImageView.loadImage(withurl :url)
-        MedImg.loadImge(withUrl: url!)
-        
         
         //MedImg.image = UIImage(named: filteredNames[indexPath.row])
         name.text = filteredPatients[indexPath.row].name
