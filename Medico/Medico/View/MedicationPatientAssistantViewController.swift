@@ -33,10 +33,7 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
 
         fetchData()
     }
-    override func viewDidAppear(_ animated: Bool) {
-        fetchData()
-
-    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return meds.count
     }
@@ -45,11 +42,12 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
         
         let TVCell = tableView.dequeueReusableCell(withIdentifier: "PCell", for: indexPath)
         let cv = TVCell.contentView
-        let MedImg = cv.viewWithTag(1) as! UIImageView
+        //let MedImg = cv.viewWithTag(1) as! UIImageView
         let name = cv.viewWithTag(2) as! UILabel
         let category = cv.viewWithTag(3) as! UILabel
         let time = cv.viewWithTag(4) as! UILabel
         let BorA = cv.viewWithTag(5) as! UILabel
+        
         
         //MedImg.image = UIImage(named: meds[indexPath.row])
         medicine = meds[indexPath.row]
@@ -57,11 +55,6 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
         category.text = medicine?.category!
         time.text = DateUtils.formatFromDateForDisplayHoursMin(date: (medicine?.notif_time) as! Date)
         BorA.text = medicine?.borA!
-        print(medicine?.photo)
-        let url = URL(string : HOST_POST_URL+"/uploads/"+(medicine?.photo)!)
-
-        MedImg.loadImge(withUrl: url!)
-        
         
         return TVCell
     }
@@ -81,9 +74,7 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
-            
-            delete(index: indexPath)
-            tableView.reloadData()
+                delete(indexPath)
         }
     }
     
@@ -101,32 +92,29 @@ class MedicationPatientAssistantViewController: UIViewController, UITableViewDel
     }
     
     func delete(index :IndexPath){
-        print("yyyyyyyyyyyyyyyyyyyy")
-        let id = UserDefaults.standard.string(forKey: "patientId")
-        print(id)
-        MedicineViewModel().deleteMedicine(pId: id!, mId: meds[index.row]._id!, completed: {
-            
-                        (success) in
-
-                            if success {
-                                print("pId------------------")
-                            //    print(self.pId)
-
-                                let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
-                                    self.present(Alert.makeAlert(titre: "Success", message: "Medicine deleled successfully."), animated: true)
-                                }
-
-                                //UserDefaults.standard.set(self.user?.email, forKey: "email")
-                            } else {
-
-
-                                self.present(Alert.makeAlert(titre: "Error", message: "Invalid information."), animated: true)
-                            }
-                    }
-        )
-
         
+        
+
+        MedicineViewModel().deleteMedicine(pId : "627b7823d0432afebda1c293", mId: meds[index.row]._id! , completed: {
+            (success) in
+
+                if success {
+                    print("pId------------------")
+                //    print(self.pId)
+
+                    let action = UIAlertAction(title: "OK", style: .default) { UIAlertAction in
+                        self.present(Alert.makeAlert(titre: "Success", message: "Medicine deleled successfully."), animated: true)
+                    }
+
+                    //UserDefaults.standard.set(self.user?.email, forKey: "email")
+                } else {
+
+
+                    self.present(Alert.makeAlert(titre: "Error", message: "Invalid information."), animated: true)
+                }
+        }
+
+        )
     }
-    
 }
 

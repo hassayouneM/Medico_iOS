@@ -7,22 +7,18 @@
 
 import UIKit
 
-class EditMedicationViewController: UIViewController ,UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+class EditMedicationViewController: UIViewController {
 
     //var
-    var currentPhoto : UIImage?
-
     var med : Medicine?
     let amounts = ["1 Pill", "2 Pills", "3 Pills"]
     let periods = ["1","2", "3", "4", "5", "6", "7", "8", "9","10","11","12", "13", "14", "15", "16", "17", "18", "19","20","21","22", "23", "24", "25", "26", "27", "28", "29","30","31"]
     let times = ["Before Meal","After Meal"]
-    var  boraIndex : Int = 0
+    
     
     //outlet
     @IBOutlet weak var EditAmountPicker: UIPickerView!
     
-    @IBOutlet weak var changeMEd: UIButton!
-    @IBOutlet weak var medPhoto: UIImageView!
     @IBOutlet weak var EditBorA: UIPickerView!
     @IBOutlet weak var nameInput: UITextField!
     
@@ -33,11 +29,10 @@ class EditMedicationViewController: UIViewController ,UIImagePickerControllerDel
     //action
 
     
-    @IBAction func changeMedImage(_ sender: Any) {
-        showActionSheet()
+    @IBAction func confirmBtn(_ sender: UIButton) {
         
-    }
-    @IBAction func confirmBtn(_ sender: Any) {
+        //ANIMATION
+        sender.flash()
         
         //EMPTY FIELD VERFICATION
         if (nameInput.text!.isEmpty) {
@@ -87,85 +82,18 @@ class EditMedicationViewController: UIViewController ,UIImagePickerControllerDel
     
     func initializePage() {
           
-          print("===================")
-        print(med)
+          
             nameInput.text = med?.name
             categoryInput.text = med?.category
             untilPicker.date = (med?.until)!
             notifPicker.date = (med?.notif_time)!
-        let url = URL(string : HOST_POST_URL+"/uploads/"+(med?.photo)!)
-        //ImageView.loadImage(withurl :url)
-        medPhoto.loadImge(withUrl: url!)
-        
+
         //EditAmountPicker.selectRow((med?.quantity)! - 1 , inComponent : 0 , animated : true)
-        print("---------------")
-        print(med?.borA)
-        boraIndex = times.firstIndex(of: (med?.borA)!)!
-            EditBorA.selectRow(boraIndex, inComponent:0 , animated: true)
+            var boraIndex = times.firstIndex(of: (med?.borA)!)
+            EditBorA.selectRow(boraIndex!, inComponent:0 , animated: true)
                 
         }
-    func camera()
-    {
-        let myPickerControllerCamera = UIImagePickerController()
-        myPickerControllerCamera.delegate = self
-        myPickerControllerCamera.sourceType = UIImagePickerController.SourceType.camera
-        myPickerControllerCamera.allowsEditing = true
-        self.present(myPickerControllerCamera, animated: true, completion: nil)
 
-    }
-  
-  
-  func gallery()
-  {
-
-      let myPickerControllerGallery = UIImagePickerController()
-      myPickerControllerGallery.delegate = self
-      myPickerControllerGallery.sourceType = UIImagePickerController.SourceType.photoLibrary
-      myPickerControllerGallery.allowsEditing = true
-      self.present(myPickerControllerGallery, animated: true, completion: nil)
-
-  }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        guard let selectedImage = info[.originalImage] as? UIImage else {
-            
-            return
-        }
-        
-        currentPhoto = selectedImage
-        medPhoto.image = selectedImage
-//        addImageButton.isHidden = true
-        
-        
-        
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    func showActionSheet(){
-
-        let actionSheetController: UIAlertController = UIAlertController(title: NSLocalizedString("Upload Image", comment: ""), message: nil, preferredStyle: .actionSheet)
-        actionSheetController.view.tintColor = UIColor.black
-        let cancelActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { action -> Void in
-            print("Cancel")
-        }
-        actionSheetController.addAction(cancelActionButton)
-
-        let saveActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Take Photo", comment: ""), style: .default)
-        { action -> Void in
-            self.camera()
-        }
-        actionSheetController.addAction(saveActionButton)
-
-        let deleteActionButton: UIAlertAction = UIAlertAction(title: NSLocalizedString("Choose From Gallery", comment: ""), style: .default)
-        { action -> Void in
-            self.gallery()
-        }
-        
-        
-        actionSheetController.addAction(deleteActionButton)
-        self.present(actionSheetController, animated: true, completion: nil)
-    }
 
 }
 extension EditMedicationViewController : UIPickerViewDelegate, UIPickerViewDataSource{

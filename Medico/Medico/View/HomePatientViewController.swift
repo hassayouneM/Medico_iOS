@@ -36,23 +36,18 @@ class HomePatientViewController: UIViewController, UITableViewDelegate, UITableV
         
         let TVCell = tableView.dequeueReusableCell(withIdentifier: "PCell")!
         let cv = TVCell.contentView
-        let MedImg = cv.viewWithTag(1) as! UIImageView
+        //let MedImg = cv.viewWithTag(1) as! UIImageView
         let name = cv.viewWithTag(2) as! UILabel
         let category = cv.viewWithTag(3) as! UILabel
         let time = cv.viewWithTag(4) as! UILabel
         let BorA = cv.viewWithTag(5) as! UILabel
 //        MedImg.image = UIImage(named: meds[indexPath.row])
-    
-        
+       
         medicine = meds[indexPath.row]
         name.text = medicine?.name!
         category.text = medicine?.category!
         time.text = DateUtils.formatFromDateForDisplayHoursMin(date: (medicine?.notif_time) as! Date)
         BorA.text = medicine?.borA!
-        let url = URL(string : HOST_POST_URL+"/uploads/"+(medicine?.photo)!)
-
-        MedImg.loadImge(withUrl: url!)
-        
         return TVCell
     }
     
