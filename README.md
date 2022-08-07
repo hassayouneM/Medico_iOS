@@ -74,10 +74,11 @@ If you prefer to write your views in code, chances are you've heard of either Ap
 
 ## Intefaces
 
-<img width="2048" alt="Capture d’écran 2022-04-12 à 01 53 01" src="https://user-images.githubusercontent.com/73349963/163087323-2e4e78b5-befa-4efe-9ad6-b607967ea275.png">
+![163087323-2e4e78b5-befa-4efe-9ad6-b607967ea275 (another copy)](https://user-images.githubusercontent.com/86298263/183288871-83173102-85ed-401c-8423-3a869ef3febe.png)
 
 
-
+![163087323-2e4e78b5-befa-4efe-9ad6-b6079![163087323-2e4e78b5-befa-4efe-9ad6-b607967ea275 (copy)](https://user-images.githubusercontent.com/86298263/183288879-ad64734f-ba65-4146-9fd6-cb5d534409b5.png)
+67ea275](https://user-images.githubusercontent.com/86298263/183288874-84c2efc1-7f42-47f4-8162-d3aafc1da88b.png)
 
 
 
